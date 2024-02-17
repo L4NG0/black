@@ -7,11 +7,11 @@ const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
   mode: 'production',
   entry: {
-    main: './src/index.js',
+    main: './src/js/index.js',
   },
   output: {
     filename: 'js/[name]-[contenthash].js',
-    path: path.resolve(__dirname, '../', 'build')
+    path: path.resolve(__dirname, '../', 'dist')
   },
   module: {
     rules: [
@@ -51,7 +51,7 @@ module.exports = {
           loader: 'file-loader',
           options: {
             name: '[name][contenthash:6].[ext]',
-            outputPath: 'images',
+            outputPath: 'img',
           }
         },
         {
@@ -84,7 +84,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: "src/templates/template.html",
+      template: "src/index.html",
       title: "nowa aplikacja",
       minify: {
         collapseWhitespace: true
@@ -94,12 +94,13 @@ module.exports = {
       filename: '[name]-[contenthash].css'
     }),
     new CopyPlugin(
-      [
-        {
-          from: 'public/images',
-          to: 'images'
-        }
-      ]
-    )
+      {
+        patterns: [
+          {
+            from: 'src/assets/img',
+            to: 'img'
+          }
+        ]
+      })
   ]
 }

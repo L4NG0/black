@@ -5,15 +5,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   mode: 'development',
   entry: {
-    main: './src/index.js',
+    main: './src/js/index.js',
   },
   output: {
     filename: 'js/[name].js',
-    path: path.resolve(__dirname, '../', 'build')
+    path: path.resolve(__dirname, '../', 'dist')
   },
   devServer: {
     open: true,
-    contentBase: path.resolve(__dirname, '../', 'public'),
+    contentBase: path.resolve(__dirname, '../', 'src', 'assets'),
     port: 5001
   },
   module: {
@@ -52,7 +52,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: "src/templates/template.html",
+      template: "src/index.html",
       title: "nowa aplikacja"
     }),
   ]
