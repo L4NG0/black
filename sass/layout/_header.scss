@@ -1,0 +1,39 @@
+.header {
+    position: fixed;
+    height: $head-height;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    background-color: rgba(230, 230, 230, 0.2);
+
+    @media (min-width: 1024px) {}
+
+    &__banner {
+        box-sizing: border-box;
+        position: absolute;
+        background-image: linear-gradient(rgba(230, 230, 230, 0.2) 100%, rgba(230, 230, 230, 0.2) 100%), url(/img/banner2.png);
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        /* border-bottom: 12px solid rgba(0, 0, 0, 0.2);
+        border-right: 10px solid rgba(0, 0, 0, 0.2); */
+        background-position-y: 20%;
+        /* animation: lighting 1s linear infinite; */
+    }
+}
+
+@keyframes lighting {
+    30% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {}
+}

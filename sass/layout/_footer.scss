@@ -1,0 +1,23 @@
+.footer {
+    position: relative;
+    height: 5vh;
+    line-height: 5vh;
+    background-color: #000;
+    text-align: right;
+
+    &__container {
+        position: absolute;
+        bottom: 5px;
+        left: 5px;
+        right: 5px;
+        background-color: #222;
+        border-radius: 5px;
+    }
+
+    &__text {
+        font-size: 14px;
+        text-decoration: none;
+        color: white;
+        padding-right: 15px;
+    }
+}

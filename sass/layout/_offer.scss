@@ -1,0 +1,39 @@
+.s-offer {
+    background-color: black;
+}
+
+.image-box {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: right;
+
+    &__slogan {
+        width: 100%;
+        text-align: right;
+        padding-right: $image-boxPadding;
+        padding-top: 15px;
+        padding-bottom: 10px;
+        color: $slogan-color;
+
+    }
+
+    &__text {
+        color: white;
+        font-size: 14px;
+        padding-right: $image-boxPadding;
+        padding-left: 13vh;
+    }
+
+    &:nth-child(3) &__slogan,
+    &:nth-child(3) &__image,
+    &:nth-child(3) &__text {
+        text-align: left;
+        padding-left: $image-boxPadding;
+    }
+
+    &:nth-child(3) &__text {
+        padding-right: 13vh;
+    }
+}

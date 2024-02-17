@@ -1,0 +1,25 @@
+/* visible above header  */
+.slogan {
+    position: relative;
+    font-family: 'higuen';
+    height: $head-height;
+    line-height: $head-height;
+    font-size: 50px;
+    color: $slogan-color;
+    text-align: center;
+
+    &__text {
+        font-family: 'cormorantGaramond';
+        font-size: 14px;
+    }
+
+    &__smaller {
+        font-family: 'cormorantGaramondBold';
+        text-align: center;
+        font-size: 22px;
+    }
+
+    &__other {
+        font-family: 'bd';
+    }
+}

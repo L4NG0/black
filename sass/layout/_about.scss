@@ -1,0 +1,67 @@
+.about-us {
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+
+    &__slogan {
+        padding-top: 15px;
+        padding-bottom: 25px;
+        font-size: 30px;
+    }
+
+    &__text {
+        padding: 40px 25px;
+        text-align: left;
+        font-size: 16px;
+        color: white;
+    }
+}
+
+.feedback {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: $color-main;
+    text-align: center;
+
+    &__slogan {
+        font-size: 37px;
+        color: $slogan-colorLight;
+        line-height: calc($head-height / 2);
+        padding-bottom: 20px;
+    }
+
+    &__opinion {
+        display: flex;
+        flex-wrap: wrap;
+        width: 80%;
+        margin: 10px 0;
+        background-color: black;
+        border-width: 10px;
+        border-color: $color-main;
+        border-radius: 5% 0 10% 0;
+        border-style: none none double none;
+
+        &-text {
+            padding: 20px 30px;
+            color: $color-main;
+            font-size: 14px;
+        }
+
+        &-logo {
+            width: 100%;
+            padding: 10px;
+            color: white;
+            font-size: 12px;
+        }
+
+        &-author {
+            width: 100%;
+            color: white;
+            font-size: 16px;
+            padding-bottom: 20px;
+        }
+    }
+}
