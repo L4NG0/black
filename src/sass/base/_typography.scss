@@ -1,24 +1,63 @@
+@import '../utils/_variables.scss';
+
 @font-face {
-    font-family: 'beachResort';
-    src: url(../../assets/fonts/Beach_Resort/Beach_Resort.ttf) format('truetype');
+    font-family: 'Beach Resort';
+    src: url('~Assets/fonts/Beach_Resort/Beach_Resort.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'cormorantGaramond';
-    src: url(../../assets/fonts/Cormorant_Garamond/CormorantGaramond-Medium.ttf) format('truetype');
+    font-family: 'Cormorant Garamond';
+    src: url('~Assets/fonts/Cormorant_Garamond/CormorantGaramond-Medium.ttf') format('truetype');
+    font-weight: normal;
 }
 
 @font-face {
-    font-family: 'cormorantGaramondBold';
-    src: url(../../assets/fonts/Cormorant_Garamond/CormorantGaramond-Bold.ttf) format('truetype');
+    font-family: 'Cormorant Garamond';
+    src: url('~Assets/fonts/Cormorant_Garamond/CormorantGaramond-Bold.ttf') format('truetype');
+    font-weight: bold;
 }
 
 @font-face {
-    font-family: 'higuen';
-    src: url(../../assets/fonts/Higuen-Font/Higuen/Serif.otf) format('opentype');
+    font-family: 'Higuen';
+    src: url('~Assets/fonts/Higuen-Font/HiguenSerif.otf') format('opentype');
 }
 
 @font-face {
-    font-family: 'bd';
-    src: url(../../assets/fonts/beautifully-delicious-font-family/BDSans-Regular.otf) format('opentype');
+    font-family: 'BD Sans';
+    src: url('~Assets/fonts/beautifully-delicious-font-family/BDSans-Regular.otf') format('opentype');
+}
+
+h1 {
+    position: relative;
+    font-family: 'Higuen';
+    font-size: $font-size * 4;
+    line-height: $head-height;
+    text-align: center;
+    height: $head-height;
+    color: $slogan-color;
+}
+
+h1.other-font {
+    font-family: 'Beach Resort';
+}
+
+h2,
+h3 {
+
+    font-size: $font-size * 1.5;
+}
+
+h2 {
+    font-family: 'Cormorant Garamond';
+    font-weight: bold;
+    text-align: center;
+}
+
+h3 {
+    font-family: 'BD Sans';
+}
+
+p {
+    font-size: $font-size;
+    font-family: 'Cormorant Garamond';
 }
