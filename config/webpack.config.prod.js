@@ -10,8 +10,7 @@ module.exports = {
     main: [('./src/js/index.js'), ('./src/sass/style.scss')]
   },
   output: {
-    filename: 'js/[name]-[contenthash].js',
-    publicPath: '../',
+    filename: 'js/[name].js',
     path: path.resolve(__dirname, '../', 'dist')
   },
   resolve: {
@@ -26,24 +25,7 @@ module.exports = {
         use: 'raw-loader'
       },
       {
-        test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              postcssOptions: {
-                plugins: [
-                  require('autoprefixer'),
-                ],
-              },
-            },
-          }
-        ]
-      },
-      {
-        test: /\.(sass|scss)$/,
+        test: /\.(sc|c)ss$/,
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
@@ -86,12 +68,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "src/index.html",
       title: "nowa aplikacja",
+      filename: 'index.html',
       minify: {
         collapseWhitespace: true
       }
     }),
     new MiniCssExtractPlugin({
-      filename: 'css/[name]-[contenthash].css'
+      filename: 'css/style.css'
     }),
     new CopyPlugin(
       {

@@ -1,4 +1,3 @@
-// import styles from '../sass/style.scss';
 function visible() {
     document.querySelectorAll('.navigation-icon').forEach(element => {
         element.classList.toggle('visible');
@@ -9,73 +8,78 @@ function visible() {
 }
 
 function scroll() {
-    const goToSection = "#" + $(this).attr('class');
-    $('body, html').animate({
-        scrollTop: $(goToSection).offset().top
-    })
+    const className = this.getAttribute('class');
+    const goToSection = "#" + className;
+    const targetElement = document.querySelector(goToSection);
+
+    if (targetElement) {
+        window.scrollTo({
+            top: targetElement.offsetTop,
+            behavior: 'smooth'
+        });
+    }
 }
+
 
 function underline() {
-    let about = $('.about-us').offset().top
-    let feedback = $('.feedback').offset().top
-    let offer = $('.s-offer').offset().top
-    let gallery = $('.s-gallery').offset().top
-    let contact = $('.container').offset().top
+    let about = document.querySelector('.about-us').offsetTop;
+    let feedback = document.querySelector('.feedback').offsetTop;
+    let offer = document.querySelector('.s-offer').offsetTop;
+    let gallery = document.querySelector('.s-gallery').offsetTop;
+    let contact = document.querySelector('.container').offsetTop;
 
-    if ($(window).scrollTop() < about) {
+
+    if (window.scrollY < about) {
         document.querySelectorAll('.menu__element a').forEach(element => {
-            element.classList.remove('underline')
-        })
+            element.classList.remove('underline');
+        });
         document.querySelectorAll('.start').forEach(element => {
-            element.classList.add('underline')
-        })
+            element.classList.add('underline');
+        });
     }
-
-    else if ($(window).scrollTop() < feedback) {
+    else if (window.scrollY < feedback) {
         document.querySelectorAll('.menu__element a').forEach(element => {
-            element.classList.remove('underline')
-        })
+            element.classList.remove('underline');
+        });
         document.querySelectorAll('.about').forEach(element => {
-            element.classList.add('underline')
-        })
+            element.classList.add('underline');
+        });
     }
-    else if ($(window).scrollTop() < offer) {
+    else if (window.scrollY < offer) {
         document.querySelectorAll('.menu__element a').forEach(element => {
-            element.classList.remove('underline')
-        })
+            element.classList.remove('underline');
+        });
         document.querySelectorAll('.thoughts').forEach(element => {
-            element.classList.add('underline')
-        })
+            element.classList.add('underline');
+        });
     }
-    else if ($(window).scrollTop() < gallery) {
+    else if (window.scrollY < gallery) {
         document.querySelectorAll('.menu__element a').forEach(element => {
-            element.classList.remove('underline')
-        })
+            element.classList.remove('underline');
+        });
         document.querySelectorAll('.offer').forEach(element => {
-            element.classList.add('underline')
-        })
+            element.classList.add('underline');
+        });
     }
-    else if ($(window).scrollTop() < contact) {
+    else if (window.scrollY < contact) {
         document.querySelectorAll('.menu__element a').forEach(element => {
-            element.classList.remove('underline')
-        })
+            element.classList.remove('underline');
+        });
         document.querySelectorAll('.gallery').forEach(element => {
-            element.classList.add('underline')
-        })
+            element.classList.add('underline');
+        });
     }
-
-
     else {
         document.querySelectorAll('.menu__element a').forEach(element => {
-            element.classList.remove('underline')
-        })
+            element.classList.remove('underline');
+        });
         document.querySelectorAll('.contact').forEach(element => {
-            element.classList.add('underline')
-        })
+            element.classList.add('underline');
+        });
     }
 }
 
-$(window).on('scroll', underline)
+window.addEventListener('scroll', underline);
 
 document.querySelectorAll('.menu__element a').forEach(element => {
     element.addEventListener('click', scroll);
