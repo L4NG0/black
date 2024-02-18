@@ -1,3 +1,4 @@
+// import styles from '../sass/style.scss';
 function visible() {
     document.querySelectorAll('.navigation-icon').forEach(element => {
         element.classList.toggle('visible');

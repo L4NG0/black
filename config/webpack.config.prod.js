@@ -7,11 +7,17 @@ const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
   mode: 'production',
   entry: {
-    main: './src/js/index.js',
+    main: [('./src/js/index.js'), ('./src/sass/style.scss')]
   },
   output: {
     filename: 'js/[name]-[contenthash].js',
+    publicPath: '../',
     path: path.resolve(__dirname, '../', 'dist')
+  },
+  resolve: {
+    alias: {
+      Assets: path.resolve(__dirname, '../src/assets/'),
+    },
   },
   module: {
     rules: [
@@ -27,8 +33,12 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              plugins: [require('autoprefixer')],
-            }
+              postcssOptions: {
+                plugins: [
+                  require('autoprefixer'),
+                ],
+              },
+            },
           }
         ]
       },
@@ -38,33 +48,23 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           'css-loader',
           {
-            loader: 'postcss-loader',
+            loader: 'postcss-loader', // Procesuje CSS z PostCSS
             options: {
-              plugins: [require('autoprefixer')],
-            }
+              postcssOptions: {
+                plugins: [
+                  require('autoprefixer'),
+                ],
+              },
+            },
           },
           'sass-loader']
       },
       {
         test: /\.(jpg|png|svg|gif|jpeg)$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[name][contenthash:6].[ext]',
-            outputPath: 'img',
-          }
+        type: 'asset/resource',
+        generator: {
+          filename: 'img/[name][contenthash:6][ext]',
         },
-        {
-          loader: 'image-webpack-loader',
-          options: {
-            mozjpeg: {
-              quality: 70,
-              progressive: true
-            }
-          }
-        }
-        ]
-
       },
       {
         test: /\.js$/,
@@ -91,7 +91,7 @@ module.exports = {
       }
     }),
     new MiniCssExtractPlugin({
-      filename: '[name]-[contenthash].css'
+      filename: 'css/[name]-[contenthash].css'
     }),
     new CopyPlugin(
       {

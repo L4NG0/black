@@ -4,17 +4,29 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
+  devtool: "source-map",
+  cache: {
+    type: "memory",
+  },
   entry: {
     main: './src/js/index.js',
+    style: './src/sass/style.scss'
   },
   output: {
     filename: 'js/[name].js',
-    path: path.resolve(__dirname, '../', 'dist')
+    path: path.resolve(__dirname, '../dist')
   },
   devServer: {
     open: true,
-    contentBase: path.resolve(__dirname, '../', 'src', 'assets'),
+    static: {
+      directory: path.join(__dirname, '../', 'src')
+    },
     port: 5001
+  },
+  resolve: {
+    alias: {
+      Assets: path.resolve(__dirname, '../src/assets/'),
+    },
   },
   module: {
     rules: [
@@ -23,16 +35,18 @@ module.exports = {
         use: 'raw-loader'
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      },
-      {
-        test: /\.(sass|scss)$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        test: /\.(sc|c)ss$/,
+        use: ['style-loader',
+          { loader: 'css-loader', options: { sourceMap: true } },
+          { loader: 'postcss-loader', options: { sourceMap: true } },
+          { loader: 'sass-loader', options: { sourceMap: true } }]
       },
       {
         test: /\.(jpg|png|svg|gif|jpeg)$/,
-        use: 'file-loader',
+        type: 'asset/resource',
+        generator: {
+          filename: 'img/[name][contenthash:6][ext]',
+        },
       },
       {
         test: /\.js$/,
