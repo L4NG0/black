@@ -9,141 +9,146 @@
   <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
 
-<body class="page">
+<body>
   <header class="header">
     <div class="header__banner"></div>
   </header>
   <nav class="navigation">
-    <div><i class="navigation-icon fa-solid visible fa-bars"></i>
+    <div><span class="navigation-icon fa-solid visible fa-bars"></span>
       <!-- <i class="fa-solid navigation__icon fa-bars-staggered"></i> -->
-      <i class="navigation-icon fa-solid fa-xmark"></i>
+      <span class="navigation-icon fa-solid fa-xmark"></span>
     </div>
     <aside class="menu">
       <ul class="menu__list">
-        <li class="menu__element"><a class="start" href="#">Start</a></li>
-        <li class="menu__element"><a class="about" href="#">About Us</a></li>
-        <li class="menu__element"><a class="thoughts" href="#">Feedback</a></li>
-        <li class="menu__element"><a class="offer" href="#">What we offer</a></li>
-        <li class="menu__element"><a class="gallery" href="#">Gallery</a></li>
-        <li class="menu__element"><a class="contact" href="#">Contact</a></li>
+        <li class="menu__item"><a data-section="start" href="#">Start</a></li>
+        <li class="menu__item"><a data-section="about" href="#">About Us</a></li>
+        <li class="menu__item"><a data-section="thoughts" href="#">Feedback</a></li>
+        <li class="menu__item"><a data-section="offer" href="#">What we offer</a></li>
+        <li class="menu__item"><a data-section="gallery" href="#">Gallery</a></li>
+        <li class="menu__item"><a data-section="contact" href="#">Contact</a></li>
       </ul>
     </aside>
   </nav>
-  <main data-section="start" id="start" class="main">
-    <div class="main__word">
-      <h1 class="main__word-half slogan other-font">black
+  <section id="start" class="section section-start">
+    <div class="section__title">
+      <h1 class="section__slogan">black
       </h1>
-      <h1 class="main__word-half slogan other-font">out</h1>
+      <h1 class="section__slogan">out</h1>
     </div>
-    <div class="main__logo visible">
-      <img class="main__logo-element visible" src="img/logo1_mini.png" alt="logo1"><img class="main__logo-element"
-        src="img/logo_mini.png" alt="logo2">
+    <div class="section__logo section__logo visible">
+      <img class="section__logo__element visible" src="img/logo1_mini.png" alt="logo1"><img
+        class="section__logo__element" src="img/logo_mini.png" alt="logo2">
     </div>
-    <h2 class="main__slogan slogan__smaller">Najlepsze zaczyna się po zmierzchu</h2>
-  </main>
-  <section data-section="about" id="about" class="about-us">
-    <h1 class="about-us-slogan slogan">Chill space</h1>
-    <h2 class="about-us__slogan slogan__smaller">Freshest underground <br>Bar and Music Club <br>in Wrocław</h2>
-    <div class="about-us__image"><img src="img/sekcja2.png" alt="lokal"></div>
-    <p class="about-us__text slogan__text">Step into our subterranean realm, where the walls come alive with
-      captivating mural. Join us for a night filled with great music, and delicious drinks where absolutely everyone is
+    <h2 class="section__slogan-smaller">Najlepsze zaczyna się po zmierzchu</h2>
+  </section>
+  <section id="about" class="section section-about">
+    <h1 class="section__title">Chill space</h1>
+    <h2 class="section__subtitle">Freshest underground <br>Bar and Music Club <br>in Wrocław</h2>
+    <div class="section__image"><img src="img/sekcja2.png" alt="lokal"></div>
+    <p class="section__description">Step into our subterranean realm, where the walls come alive with
+      captivating mural. Join us for a night filled with great music, and delicious drinks where absolutely
+      everyone is
       welcome and will find something for themselves</p>
   </section>
-  <div data-section="thoughts" id="thoughts" class="feedback">
-    <h1 class="feedback__slogan slogan">Your Thoughts <br>on us...</h1>
-    <div class="feedback__opinion">
-      <span class="feedback__opinion-text slogan__text">"Jeśli chcesz wypić coś dobrego w ciekawym miejscu, Blackout to idealny wybór. Nastrojowe oświetlenie i minimalistyczne wnętrze kontrastują z wyróżniającym się, fluorescencyjnym muralem. Do tego doskonałe piwa i drinki – to wszystko w jednym miejscu."</span>
-      <div class="feedback__opinion-logo"><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i
-          class="fa-regular fa-star"></i></div>
-      <h2 class="feedback__opinion-author slogan__smaller">EDYTA SARWIŃSKA</h2>
+  <section id="thoughts" class="section">
+    <h1 class="section__title">Your Thoughts <br>on us...</h1>
+    <div class="opinion">
+      <span class="opinion__text">"Jeśli chcesz wypić coś dobrego w ciekawym miejscu, Blackout to idealny wybór. Nastrojowe oświetlenie i minimalistyczne wnętrze kontrastują z wyróżniającym się, fluorescencyjnym muralem. Do tego doskonałe piwa i drinki – to wszystko w jednym miejscu."</span>
+      <div class="opinion__stars"><span class="fa-regular fa-star"></span><span class="fa-regular fa-star"></i><i
+                    class="fa-regular fa-star"></span></div>
+      <h2 class="opinion__author">EDYTA SARWIŃSKA</h2>
     </div>
-    <div class="feedback__opinion">
-      <span class="feedback__opinion-text slogan__text">"Wnętrze charakteryzuje się minimalnym i klimatycznym oświetleniem. Meble i dodatki są czarne. Jednak jest jedna rzecz, która przyciąga wzrok. Po wejściu do lokalu klientom ukazuje się mural z postacią Kleopatry. Na tle ścian w stonowanych kolorach obraz wyróżnia się wyrazistymi barwami. Co ciekawe, namalowany jest farbą fluorescencyjną, więc świeci odbitym światłem. Przez to Blackout zyskuje wyrazisty charakter."</span>
-      <div class="feedback__opinion-logo"><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i
-          class="fa-regular fa-star"></i></div>
-      <h2 class="feedback__opinion-author slogan__smaller">GAZETA WROCŁAWSKA</h2>
+    <div class="opinion">
+      <span class="opinion__text">"Wnętrze charakteryzuje się minimalnym i klimatycznym oświetleniem. Meble i dodatki są czarne. Jednak jest jedna rzecz, która przyciąga wzrok. Po wejściu do lokalu klientom ukazuje się mural z postacią Kleopatry. Na tle ścian w stonowanych kolorach obraz wyróżnia się wyrazistymi barwami. Co ciekawe, namalowany jest farbą fluorescencyjną, więc świeci odbitym światłem. Przez to Blackout zyskuje wyrazisty charakter."</span>
+      <div class="opinion__logo"><span class="fa-regular fa-star"></span><span class="fa-regular fa-star"></i><i
+                    class="fa-regular fa-star"></span></div>
+      <h2 class="opinion__author">GAZETA WROCŁAWSKA</h2>
     </div>
-    <div class="feedback__opinion">
-      <span class="feedback__opinion-text slogan__text">Great place for a beer, great music, great prices! All is good</span>
-      <div class="feedback__opinion-logo"><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i
-          class="fa-regular fa-star"></i></div>
-      <h2 class="feedback__opinion-author slogan__smaller">AYMAN QADRI</h2>
+    <div class="opinion">
+      <span class="opinion__text">Great place for a beer, great music, great prices! All is good</span>
+      <div class="opinion__logo"><span class="fa-regular fa-star"></span><span class="fa-regular fa-star"></i><i
+                    class="fa-regular fa-star"></span></div>
+      <h2 class="opinion__author">AYMAN QADRI</h2>
     </div>
-  </div>
-  <section data-section="offer" id="offer" class="s-offer">
-    <h1 class="slogan-offer slogan">We offer</h1>
-    <div class="image-box">
-      <img src="img/offer_1.png" alt="" class="image-box__image">
-      <h2 class="image-box__slogan slogan__smaller">A wealth of beverage choices</h2>
-      <p class="image-box__text slogan__text">A rich beverage menu that encompasses both classic cocktails, exclusive
+  </section>
+  <section id="offer" class="section section-offer">
+    <h1 class="section__title">We offer</h1>
+    <div class="offer-box">
+      <img src="img/offer_1.png" alt="" class="offer-box__image">
+      <h2 class="offer-box__title ">A wealth of beverage choices</h2>
+      <p class="offer-box__description">A rich beverage menu that encompasses both classic cocktails,
+        exclusive
         concoctions, and
         a selection of craft beers to satisfy even the most refined palates.</p>
     </div>
-    <div class="image-box">
-      <img src="img/offer_2.png" alt="" class="image-box__image">
-      <h2 class="image-box__slogan slogan__smaller">Crafted by our mixology maestro</h2>
-      <p class="image-box__text slogan__text">Step into a world where your liquid dreams come to life, curated by our
+    <div class="offer-box">
+      <img src="img/offer_2.png" alt="" class="offer-box__image">
+      <h2 class="offer-box__title">Crafted by our mixology maestro</h2>
+      <p class="offer-box__description">Step into a world where your liquid dreams come to life, curated by
+        our
         master
         mixologist.</p>
     </div>
-    <div class="image-box">
-      <img src="img/offer_3.png" alt="" class="image-box__image">
-      <h2 class="image-box__slogan slogan__smaller">Surrounded by epic tunes</h2>
-      <p class="image-box__text slogan__text">A place where the power of music not only enhances your stay but sweeps
+    <div class="offer-box">
+      <img src="img/offer_3.png" alt="" class="offer-box__image">
+      <h2 class="offer-box__title">Surrounded by epic tunes</h2>
+      <p class="offer-box__description">A place where the power of music not only enhances your stay but
+        sweeps
         you
         away on a mesmerizing journey.</p>
     </div>
   </section>
-  <section data-section="gallery" id="gallery" class="s-gallery">
-    <h1 class="gallery-slogan slogan">Gallery</h1>
+  <section id="gallery" class="section section-gallery">
+    <h1 class="section__title">Gallery</h1>
     <div class="gallery-box">
       <img src="img/gallery_1.png" alt="" class="gallery-box__image">
-      <h2 class="gallery-box__slogan slogan__smaller">New connections await</h2>
+      <h2 class="gallery-box__title">New connections await</h2>
     </div>
     <div class="gallery-box">
       <img src="img/gallery_2.png" alt="" class="gallery-box__image">
-      <h2 class="gallery-box__slogan slogan__smaller">Theme events</h2>
+      <h2 class="gallery-box__title">Theme events</h2>
     </div>
     <div class="gallery-box">
       <img src="img/gallery_3.png" alt="" class="gallery-box__image">
-      <h2 class="gallery-box__slogan slogan__smaller">Live performances</h2>
+      <h2 class="gallery-box__title">Live performances</h2>
     </div>
   </section>
-  <section data-section="contact" id="contact" class="container">
-    <h1 class="contact-slogan slogan">Contact</h1>
+  <section id="contact" class="section section-contact">
+    <h1 class="section__title">Contact</h1>
     <div class="contact-box">
-      <h2 class="contact-box__other-slogan slogan__other">
-        Our place</h2>
-      <p class="contact-box__text slogan__text">ul. Ruska 61
+      <h3 class="contact-box__title">
+        Our place</h3>
+      <p class="contact-box__description">ul. Ruska 61
         <br>50-079 Wrocław
         <br>R61.WRO@gmail.com
       </p>
     </div>
     <div class="contact-box">
-      <h2 class="contact-box__other-slogan slogan__other">Office Hours</h2>
-      <h2 class="contact-box__slogan slogan__smaller">Monday, we rest</h2>
-      <h2 class="contact-box__slogan slogan__smaller">TUESDAY, WEDNSDAY <p class="contact-box__text slogan__text">
+      <h3 class="contact-box__title">Office Hours</h3>
+      <h2 class="contact-box__subtitle">Monday, we rest</h2>
+      <h2 class="contact-box__subtitle">TUESDAY, WEDNSDAY
+        <p class="contact-box__description">
           5.00 pm to 2.00 am</p>
       </h2>
-      <h2 class="contact-box__slogan slogan__smaller">Thursday - Saturday
-        <p class="contact-box__text slogan__text">4:00 pm to 4.00 am</p>
+      <h2 class="contact-box__subtitle">Thursday - Saturday
+        <p class="contact-box__description">4:00 pm to 4.00 am</p>
       </h2>
-      <h2 class="contact-box__slogan slogan__smaller">SUNDAY
-        <p class="contact-box__text slogan__text">7.00 pm to 1.00 am</p>
+      <h2 class="contact-box__subtitle">SUNDAY
+        <p class="contact-box__description">7.00 pm to 1.00 am</p>
       </h2>
     </div>
     <div class="contact-box">
-      <a href="https://www.facebook.com/blackout.wro" class="contact-box__logo"><i class="fa-brands fa-facebook"></i></a>
-      <a href="https://www.instagram.com/blackout.wro/" class="contact-box__logo"><i class="fa-brands fa-instagram"></i></a>
-      <a href="https://maps.app.goo.gl/mpJsASGQ3A37Roou6" class="contact-box__logo"><i class="fa-brands fa-google"></i></a>
+      <a href="https://www.facebook.com/blackout.wro" class="contact-box__logo"><span class="fa-brands fa-facebook"></span></a>
+      <a href="https://www.instagram.com/blackout.wro/" class="contact-box__logo"><span class="fa-brands fa-instagram"></span></a>
+      <a href="https://maps.app.goo.gl/mpJsASGQ3A37Roou6" class="contact-box__logo"><span class="fa-brands fa-google"></span></a>
     </div>
     <div class="contact-box">
-      <h1 class="contact-box__ban">BLACKOUT <br>Where Night Shine Brightest</h1>
+      <h1 class="contact-box__slogan">BLACKOUT <br>Where Night Shine Brightest</h1>
     </div>
   </section>
-  <footer class="footer">
-    <div class="footer__container">
-      <a class="footer__text" href=""><i class="fa-regular fa-copyright"></i> Designed by WGCraft</a>
+  <footer>
+    <div>
+      <a href=""><span class="fa-regular fa-copyright"></span> Designed by WGCraft</a>
     </div>
   </footer>
 </body>
