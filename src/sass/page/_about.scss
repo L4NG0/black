@@ -1,0 +1,22 @@
+.about {
+    display: grid;
+    grid-template-rows: 17vh 1fr 15vh;
+    align-items: center;
+    row-gap: 3vh;
+
+
+    &__subtitle {
+        align-self: flex-start;
+        font-size: 2rem;
+
+    }
+
+    &__image img {
+        width: 90%;
+    }
+
+    &__description {
+        align-self: flex-start;
+        margin: 0 25px;
+    }
+}

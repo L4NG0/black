@@ -1,0 +1,31 @@
+.contact-box {
+
+    &__title {
+        padding: 10px 0 20px 0;
+    }
+
+    &__subtitle {
+        text-transform: uppercase;
+        font-size: 1.3rem;
+    }
+
+    &__description {
+        text-transform: none;
+        font-size: 1.2rem;
+        padding-bottom: 30px;
+    }
+
+    &__logo {
+        color: white;
+        font-size: 2rem;
+        padding: 10px;
+    }
+
+    &__slogan {
+        font-family: 'Beach Resort';
+        font-size: 2rem;
+        color: $color-slogan;
+        padding: 30px 0;
+        margin-bottom: 20px;
+    }
+}

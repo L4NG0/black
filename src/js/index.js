@@ -79,20 +79,20 @@ function underline() {
     }
 }
 
-window.addEventListener('scroll', underline);
+// window.addEventListener('scroll', underline);
 
-document.querySelectorAll('.menu__element a').forEach(element => {
-    element.addEventListener('click', scroll);
-    element.addEventListener('click', visible);
-});
-document.querySelectorAll('.navigation-icon').forEach(element => {
-    element.addEventListener('click', visible);
-});
+// document.querySelectorAll('.menu__element a').forEach(element => {
+//     element.addEventListener('click', scroll);
+//     element.addEventListener('click', visible);
+// });
+// document.querySelectorAll('.navigation-icon').forEach(element => {
+//     element.addEventListener('click', visible);
+// });
 
-document.querySelectorAll('.main__logo-element').forEach(element => {
-    element.addEventListener('click', function () {
-        document.querySelectorAll('.main__logo-element').forEach(el => {
-            el.classList.toggle('visible');
-        });
-    });
-});
+// document.querySelectorAll('.main__logo-element').forEach(element => {
+//     element.addEventListener('click', function () {
+//         document.querySelectorAll('.main__logo-element').forEach(el => {
+//             el.classList.toggle('visible');
+//         });
+//     });
+// });

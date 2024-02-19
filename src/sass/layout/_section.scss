@@ -1,0 +1,37 @@
+.section {
+    background-color: $color-main;
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    text-align: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: $title-rowHeight;
+    justify-items: center;
+
+
+    &__title {
+        grid-area: 1;
+        height: $head-height;
+        margin-top: $head-marginTop;
+        color: $colorLight-slogan;
+    }
+
+    &-opinion h1 {
+        line-height: $head-height /2;
+    }
+
+    &-start__slogan {
+        font-family: 'Beach Resort';
+    }
+
+    &-contact__slogan {
+        color: $color-slogan;
+        line-height: $head-height /2;
+    }
+
+    &.section-dark {
+        background-color: $color-secondary;
+        color: white
+    }
+
+}

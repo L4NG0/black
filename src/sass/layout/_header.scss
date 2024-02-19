@@ -1,22 +1,18 @@
 .header {
     position: fixed;
     height: $head-height;
-    top: 5px;
-    left: 5px;
-    right: 5px;
-    background-color: rgba(230, 230, 230, 0.2);
+    top: $head-marginTop;
+    left: 2vw;
+    right: 2vw;
 
     @media (min-width: 1024px) {}
 
     &__banner {
-        box-sizing: border-box;
         position: absolute;
         background-image: linear-gradient(rgba(230, 230, 230, 0.2) 100%, rgba(230, 230, 230, 0.2) 100%), url('~Assets/img/banner2.png');
         width: 100%;
         height: 100%;
         border-radius: 10px;
-        /* border-bottom: 12px solid rgba(0, 0, 0, 0.2);
-        border-right: 10px solid rgba(0, 0, 0, 0.2); */
         background-position-y: 20%;
         /* animation: lighting 1s linear infinite; */
     }

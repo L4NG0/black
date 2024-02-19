@@ -30,21 +30,15 @@
 h1 {
     position: relative;
     font-family: 'Higuen';
-    font-size: $font-size * 4;
+    font-size: 3rem;
     line-height: $head-height;
     text-align: center;
-    height: $head-height;
-    color: $slogan-color;
-}
-
-h1.section__slogan {
-    font-family: 'Beach Resort';
 }
 
 h2,
 h3 {
 
-    font-size: $font-size * 1.5;
+    font-size: 1.5rem;
 }
 
 h2 {
@@ -58,6 +52,5 @@ h3 {
 }
 
 p {
-    font-size: $font-size;
     font-family: $main-ff;
 }
