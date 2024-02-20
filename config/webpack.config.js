@@ -16,6 +16,7 @@ module.exports = {
     filename: 'js/[name].js',
     path: path.resolve(__dirname, '../live'),
   },
+  optimization: { runtimeChunk: "single", },
   devServer: {
     open: true,
     static: {
