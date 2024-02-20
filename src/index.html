@@ -32,11 +32,18 @@
   <section id="start" class="section section-start">
     <h1 class="section-start__slogan">blackout</h1>
     <div class="section-start__logo visible">
-      <img class="section-start__logo__element visible" srcset="img/logo400.jpg 500w,
-        img/logo800.jpg 1000w,
-        img/logo1200.jpg 1500w" sizes="(max-width: 600px) 500px,
-        (max-width: 900px) 1000px,
-        1500px" src="img/logo1800.jpg" alt="logo1">
+      <picture>
+        <source media="(min-width: 801px)" srcset="img/logo1_1200.jpg">
+        <source media="(min-width: 461px)" srcset="img/logo1_800.jpg">
+        <source srcset="img/logo1_400.jpg">
+        <img class="section-start__logo__element visible" src="img/logo1_400.jpg" alt="logo" title="logo">
+      </picture>
+      <picture class="section-start__logo__element">
+        <source media="(min-width: 801px)" srcset="img/logo1200.jpg">
+        <source media="(min-width: 461px)" srcset="img/logo800.jpg">
+        <source srcset="img/logo400.jpg">
+        <img src="img/logo400.jpg" alt="logo" title="logo">
+      </picture>
       <!-- <img class="section-start__logo__element visible" srcset="img/logo1_400.jpg 500w,
         img/logo1_800.jpg 1000w,
         img/logo1_1200.jpg 1500w" sizes="(max-width: 600px) 500px,
@@ -50,11 +57,13 @@
     <div class="about">
       <h2 class="section__subtitle about__subtitle">Freshest underground <br>Bar and Music Club <br>in Wrocław
       </h2>
-      <div class="section__image about__image"><img srcset="img/sekcja2.png 500w,
-            img/sekcja2.png 1000w,
-            img/sekcja2.png 1500w" sizes="(max-width: 600px) 500px,
-           (max-width: 900px) 1000px,
-           1500px" src="img/sekcja2.png" alt="lokal"></div>
+      <div class="section__image about__image">
+        <img srcset="img/about400.jpg 500w,
+            img/about800.jpg 800w,
+            img/about1200.jpg 1200w" sizes="(max-width: 460px) 500px,
+           (max-width: 800px) 800px,
+           1200px" src="img/about1200.jpg" alt="lokal">
+      </div>
       <p class="section__description about__description">Step into our subterranean realm, where the walls come
         alive with
         captivating mural. Join us for a night filled with great music, and delicious drinks where absolutely
@@ -142,15 +151,27 @@
   <section id="gallery" class="section section-gallery">
     <h1 class="section__title">Gallery</h1>
     <div class="gallery-box">
-      <img src="img/gallery_1.png" alt="" class="gallery-box__image">
+      <img srcset="img/gallery_1_400.jpg 500w,
+        img/gallery_1_800.jpg 800w,
+        img/gallery_1_1200.jpg 1200w" sizes="(max-width: 460px) 500px,
+        (max-width: 800px) 800px,
+        1200px" src="img/gallery_1_1200.jpg" alt="" class="gallery-box__image">
       <h2 class="gallery-box__title">New connections await</h2>
     </div>
     <div class="gallery-box">
-      <img src="img/gallery_2.png" alt="" class="gallery-box__image">
+      <img srcset="img/gallery_2_400.jpg 500w,
+        img/gallery_2_800.jpg 800w,
+        img/gallery_2_1200.jpg 1200w" sizes="(max-width: 460px) 500px,
+        (max-width: 800px) 800px,
+        1200px" src="img/gallery_2_1200.jpg" alt="" class="gallery-box__image">
       <h2 class="gallery-box__title">Theme events</h2>
     </div>
     <div class="gallery-box">
-      <img src="img/gallery_3.png" alt="" class="gallery-box__image">
+      <img srcset="img/gallery_3_400.jpg 500w,
+        img/gallery_3_800.jpg 800w,
+        img/gallery_3_1200.jpg 1200w" sizes="(max-width: 460px) 500px,
+        (max-width: 800px) 800px,
+        1200px" src="img/gallery_3_1200.jpg" alt="" class="gallery-box__image">
       <h2 class="gallery-box__title">Live performances</h2>
     </div>
   </section>
