@@ -28,17 +28,19 @@
 }
 
 h1 {
-    position: relative;
+    // position: relative;
+    z-index: 1;
     font-family: 'Higuen';
     font-size: 3rem;
-    line-height: $head-height;
+    line-height: calc(#{$head-height} - 21px);
     text-align: center;
+    cursor: default;
 }
 
 h2,
 h3 {
-
     font-size: 1.5rem;
+    cursor: default;
 }
 
 h2 {
