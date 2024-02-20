@@ -12,22 +12,20 @@
 <body>
   <header class="header">
     <div class="header__banner"></div>
+    <ul class="header__menu">
+      <li class="header__menu__item"><a data-section="start" href="#">Start</a></li>
+      <li class="header__menu__item"><a data-section="about" href="#">About Us</a></li>
+      <li class="header__menu__item"><a data-section="thoughts" href="#">Feedback</a></li>
+      <li class="header__menu__item"><a data-section="offer" href="#">What we offer</a></li>
+      <li class="header__menu__item"><a data-section="gallery" href="#">Gallery</a></li>
+      <li class="header__menu__item"><a data-section="contact" href="#">Contact</a></li>
+    </ul>
   </header>
   <nav class="navigation">
     <div><span class="navigation-icon fa-solid visible fa-bars"></span>
       <!-- <i class="fa-solid navigation__icon fa-bars-staggered"></i> -->
       <span class="navigation-icon fa-solid fa-xmark"></span>
     </div>
-    <aside class="menu">
-      <ul class="menu__list">
-        <li class="menu__item"><a data-section="start" href="#">Start</a></li>
-        <li class="menu__item"><a data-section="about" href="#">About Us</a></li>
-        <li class="menu__item"><a data-section="thoughts" href="#">Feedback</a></li>
-        <li class="menu__item"><a data-section="offer" href="#">What we offer</a></li>
-        <li class="menu__item"><a data-section="gallery" href="#">Gallery</a></li>
-        <li class="menu__item"><a data-section="contact" href="#">Contact</a></li>
-      </ul>
-    </aside>
   </nav>
   <section id="start" class="section section-start">
     <h1 class="section-start__slogan">blackout</h1>
@@ -38,17 +36,12 @@
         <source srcset="img/logo1_400.jpg">
         <img class="section-start__logo__element visible" src="img/logo1_400.jpg" alt="logo" title="logo">
       </picture>
-      <picture class="section-start__logo__element">
+      <picture>
         <source media="(min-width: 801px)" srcset="img/logo1200.jpg">
         <source media="(min-width: 461px)" srcset="img/logo800.jpg">
         <source srcset="img/logo400.jpg">
-        <img src="img/logo400.jpg" alt="logo" title="logo">
+        <img class="section-start__logo__element" src="img/logo400.jpg" alt="logo" title="logo">
       </picture>
-      <!-- <img class="section-start__logo__element visible" srcset="img/logo1_400.jpg 500w,
-        img/logo1_800.jpg 1000w,
-        img/logo1_1200.jpg 1500w" sizes="(max-width: 600px) 500px,
-        (max-width: 900px) 1000px,
-        1500px" src="img/logo1_1800.jpg" alt="logo2"> -->
     </div>
     <h2 class="section-start__slogan-smaller">Najlepsze zaczyna się po zmierzchu</h2>
   </section>
