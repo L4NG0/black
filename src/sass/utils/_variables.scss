@@ -1,7 +1,9 @@
 $main-ff: 'Cormorant Garamond';
 $head-height: 16vh;
 $head-marginTop: 5px;
-$title-rowHeight: calc(#{$head-height} + #{$head-marginTop});
+$header-marginLR: 2vw;
+$rowHead: calc(#{$head-height} + #{$head-marginTop});
+$navTop: calc(#{$rowHead} / 2);
 $color-main: #dbb030;
 $color-secondary: #000;
 $color-slogan: #40ffb5;
