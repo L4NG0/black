@@ -3,7 +3,7 @@
 /* strona startowa */
 
 .section-start {
-    grid-template-rows: 2fr 1fr 1fr;
+    grid-template-rows: 2fr 1.5fr 1fr;
 
     &__slogan {
         align-self: flex-end;
@@ -13,9 +13,9 @@
         /* text-shadow: 0 0 30px white, 0 0 10px white, 0 0 5px white; */
         text-transform: uppercase;
 
-        &:last-child {
-            animation: flash 10s linear infinite both;
-        }
+        // &:last-child {
+        //     animation: flash 10s linear infinite both;
+        // }
 
         &-smaller {
             font-size: 2rem;
@@ -28,6 +28,7 @@
         border: 5px solid black;
         opacity: 0.8;
         display: none;
+        cursor: pointer;
 
         &.visible {
             display: inline;
