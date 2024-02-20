@@ -11,7 +11,9 @@
     }
 
     &__image {
-        width: 90%;
+        width: 90vw;
+        height: 90vw;
+        object-fit: cover;
         border-radius: 5px;
     }
 
