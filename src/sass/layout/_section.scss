@@ -5,19 +5,18 @@
     display: grid;
     text-align: center;
     grid-template-columns: 1fr;
-    grid-template-rows: $title-rowHeight;
+    grid-template-rows: $rowHead;
     justify-items: center;
 
 
     &__title {
         grid-area: 1;
-        height: $head-height;
         margin-top: $head-marginTop;
         color: $colorLight-slogan;
     }
 
     &-opinion h1 {
-        line-height: $head-height /2;
+        line-height: $head-height / 2.2;
     }
 
     &-start__slogan {
