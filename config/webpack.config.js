@@ -14,12 +14,12 @@ module.exports = {
   },
   output: {
     filename: 'js/[name].js',
-    path: path.resolve(__dirname, '../dist')
+    path: path.resolve(__dirname, '../live'),
   },
   devServer: {
     open: true,
     static: {
-      directory: path.join(__dirname, '../', 'src')
+      directory: path.join(__dirname, '../', 'src/assets/')
     },
     port: 5001
   },
@@ -45,7 +45,7 @@ module.exports = {
         test: /\.(jpg|png|svg|gif|jpeg)$/,
         type: 'asset/resource',
         generator: {
-          filename: 'img/[name][contenthash:6][ext]',
+          filename: 'img/[name][ext]',
         },
       },
       {
@@ -66,8 +66,8 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: "src/index2.html",
-      title: "nowa aplikacja"
+      template: "src/index.html",
+      title: "nowa aplikacja",
     }),
   ]
 }

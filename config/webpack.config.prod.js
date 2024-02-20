@@ -11,7 +11,7 @@ module.exports = {
   },
   output: {
     filename: 'js/[name].js',
-    path: path.resolve(__dirname, '../', 'dist')
+    path: path.resolve(__dirname, '../', 'dist'),
   },
   resolve: {
     alias: {
@@ -45,7 +45,7 @@ module.exports = {
         test: /\.(jpg|png|svg|gif|jpeg)$/,
         type: 'asset/resource',
         generator: {
-          filename: 'img/[name][contenthash:6][ext]',
+          filename: 'img/[name][ext]',
         },
       },
       {
@@ -78,7 +78,7 @@ module.exports = {
       filename: 'index.html',
       minify: {
         collapseWhitespace: true
-      }
+      },
     }),
     new MiniCssExtractPlugin({
       filename: 'css/style.css'
@@ -91,6 +91,6 @@ module.exports = {
             to: 'img'
           }
         ]
-      })
+      }),
   ]
 }
