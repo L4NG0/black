@@ -1,5 +1,3 @@
-@import '../utils/_variables.scss';
-
 @font-face {
     font-family: 'Beach Resort';
     src: url('~Assets/fonts/Beach_Resort/Beach_Resort.ttf') format('truetype');
@@ -28,13 +26,13 @@
 }
 
 h1 {
-    // position: relative;
     z-index: 1;
     font-family: 'Higuen';
     font-size: 3rem;
-    line-height: calc(#{$head-height} - 21px);
+    line-height: calc(#{$head-height} - 15px);
     text-align: center;
     cursor: default;
+    ;
 }
 
 h2,
