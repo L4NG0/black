@@ -1,4 +1,5 @@
 .section {
+    $c: &;
     background-color: $color-main;
     width: 100%;
     min-height: 100vh;
@@ -12,10 +13,13 @@
     &__title {
         grid-area: 1;
         margin-top: $head-marginTop;
-        // color: $colorLight-slogan;
-        color: black;
+        color: $color-main;
         letter-spacing: 2px;
-        -webkit-text-stroke: 1px $colorLight-slogan;
+        -webkit-text-stroke: 1.5px $colorLight-slogan;
+
+        &.color {
+            z-index: 10000;
+        }
     }
 
     &-opinion h1 {
@@ -33,7 +37,12 @@
 
     &.section-dark {
         background-color: $color-secondary;
-        color: white
+        color: white;
+
+        & #{$c}__title {
+            color: black;
+            -webkit-text-stroke: 1px $colorLight-slogan;
+        }
     }
 
 }
