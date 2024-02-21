@@ -1,15 +1,43 @@
+// jeżeli banner na napisie to napis zmienia np. text-stroke albo text-fill
+
 function toggleVisibility() {
     const menu = document.querySelector('.header__menu');
+    const items = document.querySelectorAll('.header__menu__item');
     const isVisible = menu.classList.contains('visible');
-
+    const isDisplay = () => {
+        items.forEach(item => {
+            item.style.display = (item.style.display === "none" || item.style.display === "") ? "block" : "none";
+        })
+    }
     document.querySelectorAll('.navigation-icon').forEach(element => {
         element.classList.toggle('visible');
     });
 
     document.querySelector('.header__banner').classList.toggle('header__banner-border', !isVisible);
 
-    menu.classList.toggle('visible', !isVisible);
-    menu.classList.toggle('invisible', isVisible);
+    if (!isVisible) {
+        menu.classList.add('visible');
+        isDisplay(); menu.animate([
+            { transform: 'translateY(-100%) scale(0.98)', opacity: 0, offset: 0 },
+            { transform: 'translateY(-2%) scale(0.98)', offset: 0.5 },
+            { transform: 'translateY(0) scale(1)', opacity: 1, offset: 1 }
+        ], {
+            duration: 800,
+            fill: 'forwards'
+        });
+    } else {
+        menu.animate([
+            { transform: 'translateY(0) scale(1)', opacity: 1 },
+            { transform: 'translateY(-2%) scale(0.98)', offset: 0.5 },
+            { transform: 'translateY(-100%) scale(0.98)', opacity: 0 }
+        ], {
+            duration: 800,
+            fill: 'forwards'
+        }).onfinish = () => {
+            isDisplay();
+            menu.classList.remove('visible');
+        };
+    }
 }
 
 function scroll(e) {
@@ -27,55 +55,67 @@ function scroll(e) {
     }
 }
 
+function underlineUsingIntersectionObserver() {
+    const menuItems = document.querySelectorAll('.header__menu__item a');
+    const sections = document.querySelectorAll('.section');
+    const titles = document.querySelectorAll('.section__title');
 
-function underline() {
-    let about = document.querySelector('.section-about').offsetTop;
-    let feedback = document.querySelector('.section-opinion').offsetTop;
-    let offer = document.querySelector('.section-offer').offsetTop;
-    let gallery = document.querySelector('.section-gallery').offsetTop;
-    let contact = document.querySelector('.section-contact').offsetTop;
+    const observerCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const activeSection = entry.target.getAttribute('id');
+                menuItems.forEach(item => {
+                    item.classList.remove('underline');
+                    if (item.getAttribute('data-section') === activeSection) {
+                        item.classList.add('underline');
+                    }
+                });
+            }
+        });
+    };
+    const observerCallback2 = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const activeTitle = entry.target.className;
+                titles.forEach(item => {
+                    item.classList.remove('color');
+                    console.log(activeTitle, item);
+                    if (item.className.includes(activeTitle)) {
+                        item.classList.add('color');
+                    }
+                });
+            }
+            else {
+                titles.forEach(item => {
+                    item.classList.remove('color');
+                })
+            }
+        });
+    };
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5
+    };
+    const observerOptions2 = {
+        root: null,
+        rootMargin: '0px 0px -85% 0px',
+        threshold: 0.5
+    };
+    const sectionObserver = new IntersectionObserver(observerCallback, observerOptions);
+    const titleObserver = new IntersectionObserver(observerCallback2, observerOptions2);
 
 
-    if (window.scrollY < about) {
-        document.querySelectorAll('.header__menu__item a').forEach(element => {
-            element.classList.remove('underline');
-        });
-        document.querySelector('[data-section="start"]').classList.add('underline');
-
-    }
-    else if (window.scrollY < feedback) {
-        document.querySelectorAll('.header__menu__item a').forEach(element => {
-            element.classList.remove('underline');
-        });
-        document.querySelector('[data-section="about"]').classList.add('underline');
-    }
-    else if (window.scrollY < offer) {
-        document.querySelectorAll('.header__menu__item a').forEach(element => {
-            element.classList.remove('underline');
-        });
-        document.querySelector('[data-section="thoughts"]').classList.add('underline');
-    }
-    else if (window.scrollY < gallery) {
-        document.querySelectorAll('.header__menu__item a').forEach(element => {
-            element.classList.remove('underline');
-        });
-        document.querySelector('[data-section="offer"]').classList.add('underline');
-    }
-    else if (window.scrollY < contact) {
-        document.querySelectorAll('.header__menu__item a').forEach(element => {
-            element.classList.remove('underline');
-        });
-        document.querySelector('[data-section="gallery"]').classList.add('underline');
-    }
-    else {
-        document.querySelectorAll('.header__menu__item a').forEach(element => {
-            element.classList.remove('underline');
-        });
-        document.querySelector('[data-section="contact"]').classList.add('underline');
-    }
+    sections.forEach(section => {
+        sectionObserver.observe(section);
+    });
+    titles.forEach(title => {
+        titleObserver.observe(title);
+    });
 }
 
-window.addEventListener('scroll', underline);
+underlineUsingIntersectionObserver();
 
 document.querySelectorAll('.header__menu__item a').forEach(element => {
     element.addEventListener('click', scroll);
@@ -87,8 +127,8 @@ document.querySelectorAll('.navigation-icon').forEach(element => {
 
 document.querySelectorAll('.section-start__logo__element').forEach(element => {
     element.addEventListener('click', function () {
-        document.querySelectorAll('.section-start__logo__element').forEach(el => {
-            el.classList.toggle('visible');
+        document.querySelectorAll('.section-start__logo__element').forEach(e => {
+            e.classList.toggle('visible');
         });
     });
 });
