@@ -1,7 +1,5 @@
 // moze cale body w kolorze jasniejszym minimalnie od zolty lub czarny i wtedy kazda sekcja zaokraglona z marginesami
 
-/* strona startowa */
-
 .section-start {
     grid-template-rows: 2fr 1.5fr 1fr;
 
@@ -10,7 +8,6 @@
         padding-bottom: 10px;
         font-size: 3.8rem;
         letter-spacing: 5px;
-        /* text-shadow: 0 0 30px white, 0 0 10px white, 0 0 5px white; */
         text-transform: uppercase;
 
         // &:last-child {
@@ -31,6 +28,7 @@
         cursor: pointer;
 
         &.visible {
+            z-index: 0;
             display: inline;
         }
     }
