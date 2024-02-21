@@ -12,11 +12,14 @@
     &__title {
         grid-area: 1;
         margin-top: $head-marginTop;
-        color: $colorLight-slogan;
+        // color: $colorLight-slogan;
+        color: black;
+        letter-spacing: 2px;
+        -webkit-text-stroke: 1px $colorLight-slogan;
     }
 
     &-opinion h1 {
-        line-height: $head-height / 2.2;
+        line-height: calc(#{$head-height} / 1.8 - 10px);
     }
 
     &-start__slogan {
