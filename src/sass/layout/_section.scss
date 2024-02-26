@@ -1,21 +1,33 @@
 .section {
     $c: &;
-    background-color: $color-main;
+    background-color: var(--color-main);
     width: 100%;
     min-height: 100vh;
     display: grid;
     text-align: center;
     grid-template-columns: 1fr;
-    grid-template-rows: $rowHead;
+    grid-template-rows: var(--rowHead);
     justify-items: center;
+
+    @include media(m) {
+        width: 69%;
+        margin: var(--marginY) var(--marginX) 0 auto;
+        border: 1px solid;
+        box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);
+    }
+
 
 
     &__title {
         grid-area: 1;
-        margin-top: $head-marginTop;
-        color: $color-main;
+        margin-top: var(--marginY);
+        color: var(--color-main);
         letter-spacing: 2px;
-        -webkit-text-stroke: 1.5px $colorLight-slogan;
+        -webkit-text-stroke: 1.5px var(--colorLight-slogan);
+
+        @include media(s) {
+            letter-spacing: 4px;
+        }
 
         &.color {
             z-index: 10000;
@@ -23,7 +35,13 @@
     }
 
     &-opinion h1 {
-        line-height: calc(#{$head-height} / 1.8 - 10px);
+        line-height: calc(var(--head-height) / 2.4);
+        font-size: 2.7rem;
+
+        @include media (s-port) {
+            line-height: calc(var(--head-height) / 2.8);
+            font-size: 4.2rem;
+        }
     }
 
     &-start__slogan {
@@ -31,17 +49,17 @@
     }
 
     &-contact__slogan {
-        color: $color-slogan;
-        line-height: $head-height /2;
+        color: var(--color-slogan);
+        line-height: var(--head-height) /2;
     }
 
     &.section-dark {
-        background-color: $color-secondary;
+        background-color: var(--color-secondary);
         color: white;
 
         & #{$c}__title {
             color: black;
-            -webkit-text-stroke: 1px $colorLight-slogan;
+            -webkit-text-stroke: 1px var(--colorLight-slogan);
         }
     }
 
