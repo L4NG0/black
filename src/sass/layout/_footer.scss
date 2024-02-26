@@ -1,15 +1,15 @@
 .footer {
     position: relative;
-    height: 5vh;
-    line-height: 5vh;
+    height: var(--foot-height);
+    line-height: var(--foot-height);
     background-color: #000;
     text-align: right;
 
     &__container {
         position: absolute;
-        bottom: 5px;
-        left: 5px;
-        right: 5px;
+        bottom: var(--marginY);
+        left: var(--marginX);
+        right: var(--marginX);
         background-color: #222;
         border-radius: 5px;
     }
@@ -17,6 +17,6 @@
     &__text {
         text-decoration: none;
         color: white;
-        padding-right: 15px;
+        padding-right: calc(var(--iconX) / 2);
     }
 }
