@@ -1,31 +1,64 @@
 .contact-box {
+    letter-spacing: 1px;
+    margin: 3vh 0;
+
+    @include media(s) {
+        letter-spacing: 2px;
+    }
 
     &__title {
-        padding: 10px 0 20px 0;
+        padding: 1.6vh 0 3.2vh 0;
+
+        @include media(s) {
+            padding-top: 3vh;
+            font-size: 2rem;
+        }
+
+        @include media(s-port) {
+            font-size: 3rem;
+        }
     }
 
     &__subtitle {
         text-transform: uppercase;
         font-size: 1.3rem;
+
+        @include media(s-port) {
+            font-size: 2rem;
+        }
     }
 
     &__description {
         text-transform: none;
         font-size: 1.2rem;
-        padding-bottom: 30px;
+
+        @include media(s-port) {
+            font-size: 1.6rem;
+        }
     }
 
     &__logo {
         color: white;
         font-size: 2rem;
-        padding: 10px;
+        padding: 0 3vw;
+
+        @include media(s-port) {
+            font-size: 3rem;
+        }
     }
 
     &__slogan {
         font-family: 'Beach Resort';
         font-size: 2rem;
-        color: $color-slogan;
-        padding: 30px 0;
-        margin-bottom: 20px;
+        color: var(--color-slogan);
+        margin-bottom: 2vh;
+
+        @include media(s) {
+            margin-bottom: 6vh;
+        }
+
+        @include media(s-port) {
+            font-size: 3rem;
+        }
     }
 }
