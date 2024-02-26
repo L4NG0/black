@@ -1,10 +1,44 @@
-$main-ff: 'Cormorant Garamond';
-$head-height: 16vh;
-$head-marginTop: 5px;
-$header-marginLR: 2vw;
-$rowHead: calc(#{$head-height} + #{$head-marginTop});
-$navTop: calc(#{$rowHead} / 2);
-$color-main: #dbb030;
-$color-secondary: #000;
-$color-slogan: #40ffb5;
-$colorLight-slogan: hsl(157, 85%, 60%);
+    :root {
+        --main-ff: 'Cormorant Garamond';
+        --head-height: 16vh;
+        --foot-height: 5vh;
+        --marginY: 1vw;
+        --marginX: 2vw;
+        --iconX: 7vw;
+        --rowHead: calc(var(--head-height) + var(--marginY));
+        --navTop: calc(var(--rowHead) / 2);
+        --color-main: #dbb030;
+        --color-secondary: #000;
+        --color-slogan: #40ffb5;
+        --colorLight-slogan: hsl(157, 85%, 60%);
+    }
+
+    @include media(s) {
+        :root {
+            --head-height: calc(16vh * 1.5);
+            --foot-height: calc(5vh * 1.5);
+            --marginY: calc(1vw *2);
+            --marginX: calc(2vw * 2);
+            --iconX: calc(7vw * 1.5);
+            --rowHead: calc(var(--head-height) + var(--marginY));
+            --navTop: calc(var(--rowHead) / 2);
+        }
+
+        @include media(s-port) {
+            :root {
+                --head-height: calc(16vh * 1.2);
+                --marginY: calc(1vw *3);
+                --marginX: calc(2vw * 3);
+                --iconX: calc(7vw * 1.8);
+            }
+        }
+
+        @include media(m) {
+            :root {
+                --head-height: 16vh;
+                --marginY: 1vw;
+                --marginX: 2vw;
+                --iconX: 7vw;
+            }
+        }
+    }
