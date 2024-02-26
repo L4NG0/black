@@ -1,12 +1,15 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-weight: normal;
 }
 
 body {
+    position: relative;
     overflow-x: hidden;
-    box-sizing: border-box;
+    // max-width: 1920px;
+    background-color: var(--color-main);
 }
 
 :root {
