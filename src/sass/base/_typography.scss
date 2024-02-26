@@ -29,20 +29,39 @@ h1 {
     z-index: 1;
     font-family: 'Higuen';
     font-size: 3rem;
-    line-height: calc(#{$head-height} - 15px);
+    line-height: calc(var(--head-height) - 15px);
     text-align: center;
     cursor: default;
-    ;
+
+    @include media(s-port) {
+        font-size: 4.5rem;
+    }
+
+    @include media(m) {
+        font-size: 6rem;
+    }
 }
 
 h2,
 h3 {
     font-size: 1.5rem;
     cursor: default;
+
+    @include media(s) {
+        font-size: 1.8rem;
+    }
+
+    @include media(s-port) {
+        font-size: 2.5rem;
+    }
+
+    @include media(m) {
+        font-size: 3rem;
+    }
 }
 
 h2 {
-    font-family: $main-ff;
+    font-family: var(--main-ff);
     font-weight: bold;
     text-align: center;
 }
@@ -52,5 +71,17 @@ h3 {
 }
 
 p {
-    font-family: $main-ff;
+    font-family: var(--main-ff);
+
+    @include media(s) {
+        font-size: 1.1rem;
+    }
+
+    @include media(s-port) {
+        font-size: 2rem;
+    }
+
+    @include media(m) {
+        font-size: 2.2rem;
+    }
 }
