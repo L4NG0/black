@@ -101,7 +101,7 @@ function underlineUsingIntersectionObserver() {
     const observerOptions2 = {
         root: null,
         rootMargin: '0px 0px -85% 0px',
-        threshold: 0.5
+        threshold: 0.2
     };
     const sectionObserver = new IntersectionObserver(observerCallback, observerOptions);
     const titleObserver = new IntersectionObserver(observerCallback2, observerOptions2);
