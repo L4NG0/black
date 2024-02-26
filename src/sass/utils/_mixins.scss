@@ -1,0 +1,32 @@
+@mixin media($platform) {
+    @if $platform ==s {
+        @media (min-width: 481px) {
+            @content;
+        }
+    }
+
+    @else if $platform ==s-port {
+        @media (min-width: 481px) and (orientation: portrait) {
+            @content;
+        }
+    }
+
+    @else if $platform ==m {
+        @media (min-width: 821px) {
+            @content;
+        }
+    }
+
+
+    @else if $platform ==l {
+        @media (min-width: 1025px) {
+            @content;
+        }
+    }
+
+    @else if $platform ==xl {
+        @media (min-width: 1281px) {
+            @content;
+        }
+    }
+}
