@@ -1,17 +1,23 @@
 .navigation-icon {
     position: fixed;
-    top: $navTop;
-    right: 7vw;
+    top: var(--navTop);
+    right: var(--iconX);
     transform: translateY(-50%);
-    background: -webkit-linear-gradient(45deg, black 0%, black 33.332%, $color-main 33.333%, $color-main 66.665%, black 66.666%, black 100%);
+    background: -webkit-linear-gradient(45deg, black 0%, black 33.332%, var(--color-main) 33.333%, var(--color-main) 66.665%, black 66.666%, black 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 45px;
+    font-size: 3.5rem;
     display: none;
     z-index: 12;
 
+    @include media(s-port) {
+        font-size: 5rem;
+    }
+
+
+
     &:last-child {
-        background: -webkit-linear-gradient(135deg, black 0%, black 46.332%, $color-main 46.333%, $color-main 52.665%, black 52.666%, black 100%);
+        background: -webkit-linear-gradient(135deg, black 0%, black 46.332%, var(--color-main) 46.333%, var(--color-main) 52.665%, black 52.666%, black 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
@@ -19,4 +25,5 @@
     &.visible {
         display: inline;
     }
+
 }
