@@ -1,42 +1,64 @@
 .offer {
     display: flex;
     text-align: right;
-    margin-top: 20px;
+    margin-top: 3vh;
     flex-wrap: wrap;
 
     &:last-child {
-        margin-bottom: 20px;
+        margin-bottom: 8vh;
     }
 
     &__image {
         width: 90%;
-        padding-right: 10vw;
+
+        @include media(s) {
+            width: 80%;
+            margin-top: 6vh;
+        }
     }
 
     &__subtitle {
-        width: 100%;
+        width: 90%;
         text-align: right;
-        padding-right: 10vw;
-        padding-top: 15px;
-        padding-bottom: 10px;
-        color: $color-slogan;
-        font-size: 16px;
+        // padding-right: 10vw;
+        padding-top: 2.5vh;
+        padding-bottom: 1.8vh;
+        color: var(--color-slogan);
+        font-size: 1.1rem;
+
+        @include media(s) {
+            width: 80%;
+            padding-top: 6vh;
+            padding-bottom: 3vh;
+        }
+
+        @include media(s-port) {
+            font-size: 2.4rem;
+        }
     }
 
     &__description {
-        padding-right: 10vw;
-        padding-left: 13vh;
+        width: 90%;
+        padding-left: 18vh;
+
+        @include media(s) {
+            width: 80%;
+        }
     }
 
     &:nth-child(3) &__subtitle,
-    &:nth-child(3) &__image,
     &:nth-child(3) &__description {
         text-align: left;
-        padding-right: 0;
-        padding-left: 10vw;
+        padding-right: 18vh;
+        padding-left: 0;
+
+        @include media(s) {
+            width: 80%;
+        }
+
     }
 
-    &:nth-child(3) &__description {
-        padding-right: 13vh;
+    &:nth-child(3) {
+        justify-content: flex-end;
     }
 }
