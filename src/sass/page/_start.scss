@@ -10,6 +10,11 @@
         letter-spacing: 5px;
         text-transform: uppercase;
 
+        @include media (s-port) {
+            font-size: 7rem;
+            letter-spacing: 8px;
+        }
+
         // &:last-child {
         //     animation: flash 10s linear infinite both;
         // }
@@ -17,6 +22,16 @@
         &-smaller {
             font-size: 2rem;
             font-weight: normal;
+
+            @include media(s) {
+                padding-top: 7vh;
+            }
+
+            @include media (s-port) {
+                font-size: 4rem;
+                padding-top: 0;
+                padding-bottom: 5vh;
+            }
         }
     }
 
