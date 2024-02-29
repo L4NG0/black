@@ -8,37 +8,38 @@
         --rowHead: calc(var(--head-height) + var(--marginY));
         --navTop: calc(var(--rowHead) / 2);
         --color-main: #dbb030;
-        --color-secondary: #000;
+        --color-black: #000;
         --color-slogan: #40ffb5;
         --colorLight-slogan: hsl(157, 85%, 60%);
     }
 
     @include media(s) {
         :root {
-            --head-height: calc(16vh * 1.5);
-            --foot-height: calc(5vh * 1.5);
-            --marginY: calc(1vw *2);
-            --marginX: calc(2vw * 2);
-            --iconX: calc(7vw * 1.5);
+            --head-height: 24vh;
+            --foot-height: 7.5vh;
+            --marginY: 2vw;
+            --marginX: 4vw;
+            --iconX: 10.5vw;
             --rowHead: calc(var(--head-height) + var(--marginY));
             --navTop: calc(var(--rowHead) / 2);
         }
 
-        @include media(s-port) {
+        @include media(m) {
             :root {
-                --head-height: calc(16vh * 1.2);
-                --marginY: calc(1vw *3);
-                --marginX: calc(2vw * 3);
-                --iconX: calc(7vw * 1.8);
+                --head-height: 19vh;
+                --marginY: 3vw;
+                --marginX: 6vw;
+                --iconX: 12.5vw;
             }
         }
 
-        @include media(m) {
+        @include media(l) {
             :root {
-                --head-height: 16vh;
+                --head-height: 18vh;
+                --width-main: 71vw;
+                --width-secondary: 25vw;
                 --marginY: 1vw;
                 --marginX: 2vw;
-                --iconX: 7vw;
             }
         }
     }

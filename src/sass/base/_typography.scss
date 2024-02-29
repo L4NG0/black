@@ -33,11 +33,11 @@ h1 {
     text-align: center;
     cursor: default;
 
-    @include media(s-port) {
+    @include media(m) {
         font-size: 4.5rem;
     }
 
-    @include media(m) {
+    @include media(l) {
         font-size: 6rem;
     }
 }
@@ -51,11 +51,11 @@ h3 {
         font-size: 1.8rem;
     }
 
-    @include media(s-port) {
+    @include media(m) {
         font-size: 2.5rem;
     }
 
-    @include media(m) {
+    @include media(l) {
         font-size: 3rem;
     }
 }
@@ -77,11 +77,11 @@ p {
         font-size: 1.1rem;
     }
 
-    @include media(s-port) {
+    @include media(m) {
         font-size: 2rem;
     }
 
-    @include media(m) {
+    @include media(l) {
         font-size: 2.2rem;
     }
 }

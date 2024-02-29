@@ -14,7 +14,7 @@
             font-size: 2rem;
         }
 
-        @include media(s-port) {
+        @include media(m) {
             font-size: 3rem;
         }
     }
@@ -23,7 +23,7 @@
         text-transform: uppercase;
         font-size: 1.3rem;
 
-        @include media(s-port) {
+        @include media(m) {
             font-size: 2rem;
         }
     }
@@ -32,7 +32,7 @@
         text-transform: none;
         font-size: 1.2rem;
 
-        @include media(s-port) {
+        @include media(m) {
             font-size: 1.6rem;
         }
     }
@@ -42,7 +42,7 @@
         font-size: 2rem;
         padding: 0 3vw;
 
-        @include media(s-port) {
+        @include media(m) {
             font-size: 3rem;
         }
     }
@@ -57,7 +57,7 @@
             margin-bottom: 6vh;
         }
 
-        @include media(s-port) {
+        @include media(m) {
             font-size: 3rem;
         }
     }

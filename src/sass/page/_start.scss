@@ -2,6 +2,8 @@
 
 .section-start {
     grid-template-rows: 2fr 1.5fr 1fr;
+    max-height: 100vh;
+
 
     &__slogan {
         align-self: flex-end;
@@ -10,7 +12,7 @@
         letter-spacing: 5px;
         text-transform: uppercase;
 
-        @include media (s-port) {
+        @include media(m) {
             font-size: 7rem;
             letter-spacing: 8px;
         }
@@ -27,7 +29,7 @@
                 padding-top: 7vh;
             }
 
-            @include media (s-port) {
+            @include media(m) {
                 font-size: 4rem;
                 padding-top: 0;
                 padding-bottom: 5vh;

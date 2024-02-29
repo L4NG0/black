@@ -1,3 +1,14 @@
+@mixin text-gradient($angle, $colors...) {
+    background: linear-gradient($angle, $colors);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@mixin text-stroke($strokeSize, $shadowSize) {
+    -webkit-text-stroke: $strokeSize var(--colorLight-slogan);
+    text-shadow: 0 0 $shadowSize var(--colorLight-slogan);
+}
+
 @mixin media($platform) {
     @if $platform ==s {
         @media (min-width: 481px) {
@@ -5,14 +16,8 @@
         }
     }
 
-    @else if $platform ==s-port {
-        @media (min-width: 481px) and (orientation: portrait) {
-            @content;
-        }
-    }
-
     @else if $platform ==m {
-        @media (min-width: 821px) {
+        @media (min-width: 768px) and (orientation: portrait) {
             @content;
         }
     }

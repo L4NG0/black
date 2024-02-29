@@ -9,11 +9,11 @@
     grid-template-rows: var(--rowHead);
     justify-items: center;
 
-    @include media(m) {
-        width: 69%;
+    @include media(l) {
+        width: var(--width-main);
         margin: var(--marginY) var(--marginX) 0 auto;
-        border: 1px solid;
-        box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.6);
     }
 
 
@@ -38,7 +38,7 @@
         line-height: calc(var(--head-height) / 2.4);
         font-size: 2.7rem;
 
-        @include media (s-port) {
+        @include media(m) {
             line-height: calc(var(--head-height) / 2.8);
             font-size: 4.2rem;
         }
@@ -54,8 +54,10 @@
     }
 
     &.section-dark {
-        background-color: var(--color-secondary);
+        background-color: var(--color-black);
         color: white;
+
+
 
         & #{$c}__title {
             color: black;
