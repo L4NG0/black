@@ -1,134 +1,144 @@
-// jeżeli banner na napisie to napis zmienia np. text-stroke albo text-fill
 
 function toggleVisibility() {
-    const menu = document.querySelector('.header__menu');
-    const items = document.querySelectorAll('.header__menu__item');
-    const isVisible = menu.classList.contains('visible');
-    const isDisplay = () => {
-        items.forEach(item => {
-            item.style.display = (item.style.display === "none" || item.style.display === "") ? "block" : "none";
-        })
-    }
-    document.querySelectorAll('.navigation-icon').forEach(element => {
-        element.classList.toggle('visible');
-    });
+    const media = window.matchMedia("(max-width: 1024px)")
+    if (media.matches) {
+        const navigationBox = document.querySelector('.navigation-box');
+        const menu = document.querySelector('.navigation-box__menu');
+        const isVisible = navigationBox.classList.toggle('visible');
+        const navIcon = document.querySelectorAll('.navigation-icon');
+        const banner = document.querySelector('.header__banner');
 
-    document.querySelector('.header__banner').classList.toggle('header__banner-border', !isVisible);
+        menu.style.display = isVisible ? "block" : "none";
+        navIcon.forEach(element => element.classList.toggle('visible'));
+        banner.classList.toggle('header__banner-border');
 
-    if (!isVisible) {
-        menu.classList.add('visible');
-        isDisplay(); menu.animate([
+        const animationKeyframes = isVisible ? [
             { transform: 'translateY(-100%) scale(0.98)', opacity: 0, offset: 0 },
             { transform: 'translateY(-2%) scale(0.98)', offset: 0.5 },
-            { transform: 'translateY(0) scale(1)', opacity: 1, offset: 1 }
-        ], {
-            duration: 800,
-            fill: 'forwards'
-        });
-    } else {
-        menu.animate([
+            { transform: 'translateY(0) scale(1)', opacity: 1, offset: 1 },
+        ] : [
             { transform: 'translateY(0) scale(1)', opacity: 1 },
             { transform: 'translateY(-2%) scale(0.98)', offset: 0.5 },
-            { transform: 'translateY(-100%) scale(0.98)', opacity: 0 }
-        ], {
+            { transform: 'translateY(-100%) scale(0.98)', opacity: 0 },
+        ];
+
+        const animationOptions = {
             duration: 800,
             fill: 'forwards'
-        }).onfinish = () => {
-            isDisplay();
-            menu.classList.remove('visible');
         };
+
+        const animation = navigationBox.animate(animationKeyframes, animationOptions);
+
+        if (!isVisible) {
+            animation.onfinish = () => {
+                menu.style.display = "none";
+                navigationBox.classList.remove('visible');
+            };
+        }
     }
 }
 
 function scroll(e) {
-    e.preventDefault()
+    e.preventDefault();
     const element = this.getAttribute('data-section');
-    const goToSection = "#" + element;
-    let targetElement = document.querySelector(goToSection);
+    if (element) {
+        const goToSection = `#${element}`;
+        const targetElement = document.querySelector(goToSection);
 
-    if (targetElement) {
-        // const topPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-        window.scrollTo({
-            top: targetElement.offsetTop,
-            behavior: 'smooth'
-        });
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: 'smooth'
+            });
+        }
     }
 }
 
 function underlineUsingIntersectionObserver() {
-    const menuItems = document.querySelectorAll('.header__menu__item a');
+    const menuItems = document.querySelectorAll('.navigation-box__menu__item a');
     const sections = document.querySelectorAll('.section');
     const titles = document.querySelectorAll('.section__title');
 
-    const observerCallback = (entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const activeSection = entry.target.getAttribute('id');
-                menuItems.forEach(item => {
-                    item.classList.remove('underline');
-                    if (item.getAttribute('data-section') === activeSection) {
-                        item.classList.add('underline');
-                    }
-                });
-            }
-        });
-    };
-    const observerCallback2 = (entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const activeTitle = entry.target.className;
-                titles.forEach(item => {
-                    item.classList.remove('color');
-                    console.log(activeTitle, item);
-                    if (item.className.includes(activeTitle)) {
-                        item.classList.add('color');
-                    }
-                });
-            }
-            else {
-                titles.forEach(item => {
-                    item.classList.remove('color');
-                })
-            }
+    const updateClass = (elements, className, condition) => {
+        elements.forEach(element => {
+            element.classList.toggle(className, condition(element));
         });
     };
 
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.5
+    const updateParentBackground = () => {
+        const menuItems = document.querySelectorAll('.navigation-box__menu__item');
+        menuItems.forEach(menuItem => {
+            const hasUnderlinedLink = menuItem.querySelector('a.underline') !== null;
+            const animationKeyframes = [{
+                backgroundColor: hasUnderlinedLink ? '#1f0034' : '#000',
+                borderLeft: hasUnderlinedLink ? '5px solid #dbb030' : 'none'
+            }];
+            const animationOptions = {
+                duration: 300,
+                fill: 'forwards'
+            };
+            menuItem.animate(animationKeyframes, animationOptions);
+        });
     };
-    const observerOptions2 = {
+
+    sections.forEach(section => {
+        const observerCallbackSection = (entries, observer) => {
+            entries.forEach(entry => {
+                const isActive = entry.isIntersecting;
+                const id = entry.target.getAttribute('id');
+                const windowHeight = window.innerHeight / 5;
+                const media = window.matchMedia("(min-width: 1025px)");
+                if (
+                    entry.boundingClientRect.top <= windowHeight &&
+                    entry.boundingClientRect.bottom >= windowHeight &&
+                    isActive
+                ) {
+                    updateClass(menuItems, 'underline', item => item.getAttribute('data-section') === id);
+                    if (media.matches) {
+                        updateParentBackground();
+                    }
+                }
+            });
+        };
+
+        const observerOptionsSections = {
+            root: null,
+            rootMargin: '-13px 0px 0px',
+            threshold: [...Array(21).keys()].map(x => x / 20)
+        };
+        const sectionObserver = new IntersectionObserver(observerCallbackSection, observerOptionsSections);
+        sectionObserver.observe(section);
+    });
+
+    const observerCallbackTitles = (entries) => {
+        entries.forEach(entry => {
+            updateClass(titles, 'color', title => entry.isIntersecting && title.className.includes(entry.target.className));
+        });
+    };
+    const observerOptionsTitles = {
         root: null,
         rootMargin: '0px 0px -85% 0px',
         threshold: 0.2
     };
-    const sectionObserver = new IntersectionObserver(observerCallback, observerOptions);
-    const titleObserver = new IntersectionObserver(observerCallback2, observerOptions2);
-
-
-    sections.forEach(section => {
-        sectionObserver.observe(section);
-    });
-    titles.forEach(title => {
-        titleObserver.observe(title);
-    });
+    const titleObserver = new IntersectionObserver(observerCallbackTitles, observerOptionsTitles);
+    titles.forEach(title => titleObserver.observe(title));
 }
 
-underlineUsingIntersectionObserver();
+document.addEventListener('DOMContentLoaded', () => {
+    underlineUsingIntersectionObserver();
+    document.querySelectorAll('.navigation-box__menu__item a').forEach(element => {
+        element.addEventListener('click', scroll);
+        element.addEventListener('click', toggleVisibility);
+    });
+    document.querySelectorAll('.navigation-icon').forEach(element => {
+        element.addEventListener('click', toggleVisibility);
+    });
 
-document.querySelectorAll('.header__menu__item a').forEach(element => {
-    element.addEventListener('click', scroll);
-    element.addEventListener('click', toggleVisibility);
-});
-document.querySelectorAll('.navigation-icon').forEach(element => {
-    element.addEventListener('click', toggleVisibility);
-});
-
-document.querySelectorAll('.section-start__logo__element').forEach(element => {
-    element.addEventListener('click', function () {
-        document.querySelectorAll('.section-start__logo__element').forEach(e => {
-            e.classList.toggle('visible');
+    document.querySelectorAll('.section-start__logo__element').forEach(element => {
+        element.addEventListener('click', function () {
+            document.querySelectorAll('.section-start__logo__element').forEach(e => {
+                e.classList.toggle('visible');
+            });
         });
     });
-});
+})
