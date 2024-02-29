@@ -1,29 +1,160 @@
-.navigation-icon {
-    position: fixed;
-    top: var(--navTop);
-    right: var(--iconX);
-    transform: translateY(-50%);
-    background: -webkit-linear-gradient(45deg, black 0%, black 33.332%, var(--color-main) 33.333%, var(--color-main) 66.665%, black 66.666%, black 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 3.5rem;
-    display: none;
-    z-index: 12;
+.navigation {
+    z-index: 10;
 
-    @include media(s-port) {
-        font-size: 5rem;
+    &-icon {
+        @include text-gradient(45deg, var(--color-black) 0%, var(--color-black) 33.332%, var(--color-main) 33.333%, var(--color-main) 66.665%, var(--color-black) 66.666%, var(--color-black) 100%);
+        position: fixed;
+        top: var(--navTop);
+        right: var(--iconX);
+        transform: translateY(-50%);
+        font-size: 3.5rem;
+        display: none;
+        z-index: 12;
+
+        @include media(m) {
+            font-size: 5rem;
+        }
+
+
+
+        &:last-child {
+            @include text-gradient(135deg, var(--color-black) 0%, var(--color-black) 46.332%, var(--color-main) 46.333%, var(--color-main) 52.665%, var(--color-black) 52.666%, var(--color-black) 100%);
+        }
+
+        &.visible {
+            display: inline;
+
+            @include media(l) {
+                display: none;
+            }
+        }
+
+
+
     }
 
+    &-box {
+        position: fixed;
+        top: var(--head-height);
+        left: var(--marginX);
+        right: var(--marginX);
+        z-index: 10;
+
+        @include media(l) {
+            background-color: var(--color-black);
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: var(--width-secondary);
+            border-radius: 0 10px 10px 0;
+            box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        &__menu {
+            display: none;
+            position: relative;
+            z-index: 10;
+            list-style: none;
+
+            @include media(l) {
+                display: block;
+                top: 0;
+                left: 0;
+            }
+
+            &.visible {
+                border-radius: 0 0 10px 10px;
+            }
+
+            &__item {
+                position: relative;
+                background-color: rgba($color: #444, $alpha: 0.8);
+                padding: 10px 20px;
+                margin: 2px 0;
+                text-align: right;
+
+                @include media(s) {
+                    padding: 5px 20px;
+                }
+
+                @include media(m) {
+                    padding: 20px 50px;
+                    margin: 4px 0;
+
+                }
+
+                @include media(l) {
+                    position: relative;
+                    display: block;
+                    width: 90%;
+                    margin: 2vh auto;
+                    height: 10vh;
+                    text-align: left;
+                }
+
+                & a {
+                    @include text-stroke(0.5px, 2px);
+                    width: 100%;
+                    text-decoration: none;
+                    font-size: 2rem;
+                    font-weight: bold;
+                    letter-spacing: 2px;
+                    color: var(--color-black);
+                    transition: .5s;
+
+                    @include media(s) {
+                        font-size: 1.8rem;
+                        letter-spacing: 3px;
+                    }
+
+                    @include media(m) {
+                        font-size: 2.5rem;
+                        letter-spacing: 5px;
+                    }
+
+                    @include media(l) {
+                        position: absolute;
+                        line-height: 55px;
+                    }
+
+                    &.underline {
+                        @include text-stroke(1.5px, 5px);
+                        font-size: 2.2rem;
+
+                        @include media(s) {
+                            font-size: 2rem;
+                        }
+
+                        @include media(m) {
+                            @include text-stroke(2.5px, 7px);
+                            font-size: 3rem;
+                        }
+
+                        @include media(l) {
+                            font-size: 3rem;
+                        }
+                    }
+                }
+            }
 
 
-    &:last-child {
-        background: -webkit-linear-gradient(135deg, black 0%, black 46.332%, var(--color-main) 46.333%, var(--color-main) 52.665%, black 52.666%, black 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+
+        }
+
+        &__elements {
+            display: none;
+
+            @include media(l) {
+                display: block;
+                margin-top: 10vh;
+
+                &__logo {
+                    color: white;
+                    font-size: 2rem;
+                    padding: 20px calc((var(--width-secondary) - 90px) / 6);
+                }
+            }
+        }
     }
-
-    &.visible {
-        display: inline;
-    }
-
 }
