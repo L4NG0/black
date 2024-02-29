@@ -1,5 +1,5 @@
 .header {
-    z-index: 10;
+    // z-index: 10;
     opacity: 0.8;
     position: fixed;
     height: var(--head-height);
@@ -7,8 +7,8 @@
     left: var(--marginX);
     right: var(--marginX);
 
-    @include media(m) {
-        width: 69%;
+    @include media(l) {
+        width: var(--width-main);
         margin-left: auto;
     }
 
@@ -29,97 +29,18 @@
         border-radius: 10px;
         background-position-y: 25%;
 
+        @include media(l) {
+            background-image: linear-gradient(to right,
+                    rgba(150, 150, 150, 0.1) 0%,
+                    rgba(150, 150, 150, 0.1) 100%),
+                url('~Assets/img/banner2.png');
+            ;
+        }
+
         /* animation: lighting 1s linear infinite; */
         &-border {
             border-radius: 10px 10px 0 0;
         }
-    }
-
-
-
-    &__menu {
-        position: absolute;
-        top: var(--head-height);
-        width: 100%;
-        list-style: none;
-
-        @include media(m) {
-            position: fixed;
-            width: calc(30% - var(--marginX));
-        }
-
-        &.visible {
-            border-radius: 0 0 10px 10px;
-        }
-
-        &__item {
-            display: none;
-            padding: 10px 20px;
-            margin: 2px 0;
-            text-align: right;
-            background-color: rgba($color: #444, $alpha: 0.8);
-
-            @include media(s) {
-                padding: 5px 20px;
-            }
-
-            @include media(s-port) {
-                padding: 20px 50px;
-                margin: 4px 0;
-
-            }
-
-            @include media(m) {
-                display: block;
-                width: 100%;
-                text-align: center;
-            }
-
-            & a {
-                text-decoration: none;
-                font-size: 2rem;
-                font-weight: bold;
-                letter-spacing: 2px;
-                color: black;
-                text-shadow: 0 0 2px var(--colorLight-slogan);
-                -webkit-text-stroke: 0.5px var(--color-slogan);
-
-                @include media(s) {
-                    font-size: 1.8rem;
-                    letter-spacing: 3px;
-                }
-
-                @include media(s-port) {
-                    font-size: 2.5rem;
-                    letter-spacing: 5px;
-                }
-
-                @include media(m) {
-                    font-size: 2.5rem;
-                }
-
-                &.underline {
-                    -webkit-text-stroke: 1.5px var(--colorLight-slogan);
-                    text-shadow: 0 0 5px var(--colorLight-slogan);
-                    font-size: 2.2rem;
-
-                    @include media(s) {
-                        font-size: 2rem;
-                    }
-
-                    @include media(s-port) {
-                        font-size: 3rem;
-                        -webkit-text-stroke: 2.5px var(--colorLight-slogan);
-                        text-shadow: 0 0 7px var(--colorLight-slogan);
-                    }
-
-                    @include media(m) {
-                        font-size: 3rem;
-                    }
-                }
-            }
-        }
-
     }
 
 
