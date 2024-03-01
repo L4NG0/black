@@ -1,11 +1,11 @@
 
 function toggleVisibility() {
-    const media = window.matchMedia("(max-width: 1024px)")
+    const media = window.matchMedia("(max-width: 1025px)")
     if (media.matches) {
-        const navigationBox = document.querySelector('.navigation-box');
-        const menu = document.querySelector('.navigation-box__menu');
+        const navigationBox = document.querySelector('.navigation__box');
+        const menu = document.querySelector('.navigation__menu');
         const isVisible = navigationBox.classList.toggle('visible');
-        const navIcon = document.querySelectorAll('.navigation-icon');
+        const navIcon = document.querySelectorAll('.navigation__icon');
         const banner = document.querySelector('.header__banner');
 
         menu.style.display = isVisible ? "block" : "none";
@@ -55,7 +55,7 @@ function scroll(e) {
 }
 
 function underlineUsingIntersectionObserver() {
-    const menuItems = document.querySelectorAll('.navigation-box__menu__item a');
+    const menuItems = document.querySelectorAll('.navigation__item a');
     const sections = document.querySelectorAll('.section');
     const titles = document.querySelectorAll('.section__title');
 
@@ -66,7 +66,7 @@ function underlineUsingIntersectionObserver() {
     };
 
     const updateParentBackground = () => {
-        const menuItems = document.querySelectorAll('.navigation-box__menu__item');
+        const menuItems = document.querySelectorAll('.navigation__item');
         menuItems.forEach(menuItem => {
             const hasUnderlinedLink = menuItem.querySelector('a.underline') !== null;
             const animationKeyframes = [{
@@ -126,11 +126,11 @@ function underlineUsingIntersectionObserver() {
 
 document.addEventListener('DOMContentLoaded', () => {
     underlineUsingIntersectionObserver();
-    document.querySelectorAll('.navigation-box__menu__item a').forEach(element => {
+    document.querySelectorAll('.navigation__item a').forEach(element => {
         element.addEventListener('click', scroll);
         element.addEventListener('click', toggleVisibility);
     });
-    document.querySelectorAll('.navigation-icon').forEach(element => {
+    document.querySelectorAll('.navigation__icon').forEach(element => {
         element.addEventListener('click', toggleVisibility);
     });
 
