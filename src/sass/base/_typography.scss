@@ -1,18 +1,12 @@
+// --main-ff {
+//   font-family: "Cormorant Garamond", serif;
+//   font-weight: 400, 700;
+//   font-style: normal;
+// }
+
 @font-face {
     font-family: 'Beach Resort';
     src: url('~Assets/fonts/Beach_Resort/Beach_Resort.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Cormorant Garamond';
-    src: url('~Assets/fonts/Cormorant_Garamond/CormorantGaramond-Medium.ttf') format('truetype');
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: 'Cormorant Garamond';
-    src: url('~Assets/fonts/Cormorant_Garamond/CormorantGaramond-Bold.ttf') format('truetype');
-    font-weight: bold;
 }
 
 @font-face {
@@ -24,6 +18,7 @@
     font-family: 'BD Sans';
     src: url('~Assets/fonts/beautifully-delicious-font-family/BDSans-Regular.otf') format('opentype');
 }
+
 
 h1 {
     z-index: 1;
