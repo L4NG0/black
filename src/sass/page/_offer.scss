@@ -20,20 +20,14 @@
     &__subtitle {
         width: 90%;
         text-align: right;
-        // padding-right: 10vw;
         padding-top: 2.5vh;
         padding-bottom: 1.8vh;
         color: var(--color-slogan);
-        font-size: 1.1rem;
 
         @include media(s) {
             width: 80%;
             padding-top: 6vh;
             padding-bottom: 3vh;
-        }
-
-        @include media(m) {
-            font-size: 2.4rem;
         }
     }
 

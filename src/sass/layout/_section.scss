@@ -19,7 +19,7 @@
 
 
     &__title {
-        grid-area: 1;
+        grid-area: 1/1/1/-1;
         margin-top: var(--marginY);
         color: var(--color-main);
         letter-spacing: 2px;
@@ -32,6 +32,10 @@
         &.color {
             z-index: 10000;
         }
+    }
+
+    &__subtitle {
+        width: 100%;
     }
 
     &-opinion h1 {
