@@ -8,6 +8,7 @@
 
     &__title {
         padding: 1.6vh 0 3.2vh 0;
+        font-size: 1.7rem;
 
         @include media(s) {
             padding-top: 3vh;
@@ -21,7 +22,6 @@
 
     &__subtitle {
         text-transform: uppercase;
-        font-size: 1.3rem;
 
         @include media(m) {
             font-size: 2rem;
@@ -37,7 +37,7 @@
         }
     }
 
-    &__logo {
+    &__logo span {
         color: white;
         font-size: 2rem;
         padding: 0 3vw;
