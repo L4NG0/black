@@ -53,17 +53,14 @@
     }
 
     &__description {
-        width: 100%;
         padding: 4vh 8vw 2vh 8vw;
         color: var(--color-main);
 
         @include media (s) {
-            font-size: 1.3rem;
             padding: 10vh;
         }
 
-        @include media (s-port) {
-            font-size: 1.4rem;
+        @include media (m) {
             padding: 2vh 3vh;
         }
     }
@@ -72,25 +69,16 @@
     &__stars {
         width: 100%;
         padding: 10px;
-        font-size: 0.9rem;
-
-        @include media (s-port) {
-            font-size: 1.1rem;
-        }
     }
 
     &__subtitle {
-        width: 100%;
-        font-size: 1.2rem;
         padding-bottom: 4vh;
 
         @include media (s) {
-            font-size: 1.4rem;
             padding: 2vh 0 10vh 0;
         }
 
-        @include media (s-port) {
-            font-size: 1.5rem;
+        @include media (m) {
             padding: 2vh 0 5vh;
         }
     }
