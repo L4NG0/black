@@ -4,37 +4,51 @@ function toggleVisibility() {
     if (media.matches) {
         const navigationBox = document.querySelector('.navigation__box');
         const menu = document.querySelector('.navigation__menu');
-        const isVisible = navigationBox.classList.toggle('visible');
+        const iconXmark = document.querySelector('.navigation__icon-xmark');
         const navIcon = document.querySelectorAll('.navigation__icon');
         const banner = document.querySelector('.header__banner');
 
-        menu.style.display = isVisible ? "block" : "none";
         navIcon.forEach(element => element.classList.toggle('visible'));
-        banner.classList.toggle('header__banner-border');
 
-        const animationKeyframes = isVisible ? [
-            { transform: 'translateY(-100%) scale(0.98)', opacity: 0, offset: 0 },
-            { transform: 'translateY(-2%) scale(0.98)', offset: 0.5 },
-            { transform: 'translateY(0) scale(1)', opacity: 1, offset: 1 },
-        ] : [
-            { transform: 'translateY(0) scale(1)', opacity: 1 },
-            { transform: 'translateY(-2%) scale(0.98)', offset: 0.5 },
-            { transform: 'translateY(-100%) scale(0.98)', opacity: 0 },
-        ];
+        if (iconXmark.classList.contains('visible')) {
+            menu.style.display = "block";
 
-        const animationOptions = {
-            duration: 800,
-            fill: 'forwards'
-        };
+            banner.classList.add('header__banner-border');
 
-        const animation = navigationBox.animate(animationKeyframes, animationOptions);
+            const animationKeyframes = [
+                { transform: 'translateY(-100%) scale(0.98)', opacity: 0, offset: 0 },
+                { transform: 'translateY(-2%) scale(0.98)', offset: 0.5 },
+                { transform: 'translateY(0) scale(1)', opacity: 1, offset: 1 },
+            ];
 
-        if (!isVisible) {
+            const animationOptions = {
+                duration: 800,
+                fill: 'forwards'
+            };
+
+            const animation = navigationBox.animate(animationKeyframes, animationOptions);
+        }
+        else {
+            const animationKeyframes = [
+                { transform: 'translateY(0) scale(1)', opacity: 1 },
+                { transform: 'translateY(-2%) scale(0.98)', offset: 0.5 },
+                { transform: 'translateY(-100%) scale(0.98)', opacity: 0 },
+            ];
+
+            const animationOptions = {
+                duration: 800,
+                fill: 'forwards'
+            };
+            const animation = navigationBox.animate(animationKeyframes, animationOptions);
             animation.onfinish = () => {
                 menu.style.display = "none";
                 navigationBox.classList.remove('visible');
-            };
-        }
+                banner.classList.remove('header__banner-border');
+            }
+
+
+
+        };
     }
 }
 
