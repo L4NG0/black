@@ -7,113 +7,78 @@
 @font-face {
     font-family: 'Beach Resort';
     src: url('~Assets/fonts/Beach_Resort/Beach_Resort.ttf') format('truetype');
+    font-display: fallback;
+
 }
 
 @font-face {
     font-family: 'Higuen';
     src: url('~Assets/fonts/Higuen-Font/HiguenSerif.otf') format('opentype');
+    font-display: fallback;
+
 }
 
 @font-face {
     font-family: 'BD Sans';
     src: url('~Assets/fonts/beautifully-delicious-font-family/BDSans-Regular.otf') format('opentype');
+    font-display: fallback;
+
 }
 
 
 h1 {
     z-index: 1;
     font-family: 'Higuen';
-    font-size: 3rem;
-    line-height: calc(var(--head-height) - var(--marginY));
+    font-size: var(--title-size);
+    line-height: calc(var(--head-height) - (var(--title-size) / 2));
     text-align: center;
     cursor: default;
-
-    @include media(m) {
-        font-size: 4.5rem;
-    }
-
-    @include media(l) {
-        font-size: 6rem;
-    }
-}
-
-h2,
-h3 {
-    font-size: 1.3rem;
-    cursor: default;
-
-    @include media(s) {
-        font-size: 1.8rem;
-    }
-
-    @include media(m) {
-        font-size: 2.5rem;
-    }
-
-    @include media(l) {
-        font-size: 3rem;
-    }
 }
 
 h2,
 h4 {
+    width: 100%;
     font-family: var(--main-ff);
     font-weight: bold;
     text-align: center;
 }
 
+h2 {
+    cursor: default;
+    font-size: var(--subtitle-size);
+
+
+}
+
 h3 {
+    cursor: default;
     font-family: 'BD Sans';
+    font-size: var(--h3-size);
+
 }
 
 h4 {
-    font-size: 1.3rem;
-
-    @include media(s) {
-        font-size: 1.5rem;
-    }
-
-    @include media(l) {
-        font-size: 2.3rem;
-    }
+    font-size: var(--h4-size);
 }
 
 p {
     font-family: var(--main-ff);
-
-    @include media(s) {
-        font-size: 1.2rem;
-    }
-
-    @include media(m) {
-        font-size: 1.5rem;
-    }
-
-    @include media(l) {
-        font-size: 2rem;
-    }
+    font-size: var(--description-size);
 }
 
 a {
-    font-size: 2rem;
+    font-size: var(--a-size);
 
     @include media(s) {
-        font-size: 1.8rem;
         letter-spacing: 3px;
     }
 
     @include media(m) {
-        font-size: 2.5rem;
         letter-spacing: 5px;
     }
 
     @include media(l) {
-        font-size: 1.8rem;
-        line-height: 55px;
-    }
-
-    @include media(xl) {
-        font-size: 2.2rem;
+        line-height: calc(10vh - (var(--a-size) / 2));
     }
 }
 
