@@ -16,7 +16,6 @@
         padding-top: 5vh;
     }
 
-    @include media(xl) {}
 
 
     &:last-child {
@@ -32,6 +31,7 @@
 
         @include media(xl) {
             margin-bottom: 0;
+
         }
     }
 
@@ -59,11 +59,14 @@
         @include media(xl) {
             width: 20vw;
             height: 20vw;
+
+            &:hover {
+                transform: scale(1.1);
+            }
         }
     }
 
     &__title {
-        width: 100%;
         margin-top: 1.7vh;
 
         @include media(s) {
