@@ -1,5 +1,4 @@
 .header {
-    // z-index: 10;
     opacity: 0.8;
     position: fixed;
     height: var(--head-height);
@@ -34,10 +33,10 @@
                     rgba(150, 150, 150, 0.1) 0%,
                     rgba(150, 150, 150, 0.1) 100%),
                 url('~Assets/img/banner2.png');
-            ;
+            background-position-y: 30%;
+
         }
 
-        /* animation: lighting 1s linear infinite; */
         &-border {
             border-radius: 10px 10px 0 0;
         }
@@ -77,20 +76,4 @@
         transform: translateY(-100%) scale(0.98);
         opacity: 0;
     }
-}
-
-@keyframes lighting {
-    30% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0.7;
-    }
-
-    70% {
-        opacity: 1;
-    }
-
-    100% {}
 }
