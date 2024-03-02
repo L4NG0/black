@@ -1,3 +1,37 @@
+@mixin typography-size($h1: null, $h2: null, $h3: null, $h4: null, $p: null, $a: null, $h1x2: null) {
+    @if $h1 !=null {
+        --title-size: #{$h1};
+    }
+
+    @if $h2 !=null {
+        --subtitle-size: #{$h2};
+    }
+
+    @if $h3 !=null {
+        --h3-size: #{$h3};
+    }
+
+    @if $h4 !=null {
+        --h4-size: #{$h4};
+    }
+
+    @if $p !=null {
+        --description-size: #{$p};
+    }
+
+    @if $a !=null {
+        --a-size: #{$a};
+    }
+
+    @if $h1x2 !=null {
+        --fedback-titleSize: calc(var(--title-size) - #{$h1x2});
+    }
+
+    @else {
+        --fedback-titleSize: calc(var(--title-size) - 10%);
+    }
+}
+
 @mixin text-gradient($angle, $colors...) {
     background: linear-gradient($angle, $colors);
     -webkit-background-clip: text;
