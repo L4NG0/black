@@ -4,6 +4,7 @@
 
 
     &__slogan {
+        font-family: 'Beach Resort';
         align-self: flex-end;
         padding-bottom: 10px;
         font-size: 3.8rem;
@@ -15,17 +16,23 @@
             letter-spacing: 8px;
         }
 
+        @include media(l) {
+            font-size: 6rem;
+            letter-spacing: 10px;
+        }
+
+        @include media(xl) {
+            font-size: 10rem;
+            letter-spacing: 20px;
+        }
 
         &-smaller {
-            font-size: 2rem;
-            font-weight: normal;
 
             @include media(s) {
                 padding-top: 7vh;
             }
 
             @include media(m) {
-                font-size: 4rem;
                 padding-top: 0;
                 padding-bottom: 5vh;
             }
