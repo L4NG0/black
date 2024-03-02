@@ -1,45 +1,65 @@
     :root {
-        --main-ff: 'Cormorant Garamond';
         --head-height: 16vh;
         --foot-height: 5vh;
         --marginY: 1vw;
-        --marginX: 2vw;
-        --iconX: 7vw;
+        --marginX: 2%;
         --rowHead: calc(var(--head-height) + var(--marginY));
         --navTop: calc(var(--rowHead) / 2);
+
         --color-main: #dbb030;
         --color-black: #000;
         --color-slogan: #40ffb5;
         --colorLight-slogan: hsl(157, 85%, 60%);
+        --main-ff: 'Cormorant Garamond';
+
+        @include typography-size(3rem, 1.7rem, 1.4rem, 1.3rem, null, 2rem);
+        --iconX: 7%;
+
+
     }
 
     @include media(s) {
         :root {
             --head-height: 24vh;
             --foot-height: 7.5vh;
-            --marginY: 2vw;
-            --marginX: 4vw;
-            --iconX: 10.5vw;
-            --rowHead: calc(var(--head-height) + var(--marginY));
-            --navTop: calc(var(--rowHead) / 2);
+            --marginY: 2vh;
+            --marginX: 4%;
+
+            //typography size:
+            @include typography-size(null, 2rem, 1.8rem, 1.5rem, 1.2rem, 1.8rem);
+            --iconX: 10.5%;
         }
 
         @include media(m) {
             :root {
                 --head-height: 19vh;
-                --marginY: 3vw;
-                --marginX: 6vw;
-                --iconX: 12.5vw;
+                --marginY: 3vh;
+                --marginX: 6%;
+
+                @include typography-size(4.5rem, 3rem, 2.5rem, null, 2.5rem, 1rem);
+                --iconX: 12.5%;
             }
         }
 
         @include media(l) {
             :root {
                 --head-height: 18vh;
-                --width-main: 71vw;
-                --width-secondary: 25vw;
-                --marginY: 1vw;
-                --marginX: 2vw;
+                --width-main: 71%;
+                --width-secondary: 25%;
+                --marginY: 1vh;
+                --marginX: 2%;
+
+                @include typography-size(6rem, 4rem, 3rem, 2.3rem, 2rem, null, 1rem);
+            }
+        }
+
+        @include media(xl) {
+            :root {
+                --head-height: 22vh;
+                --width-main: 74%;
+                --width-secondary: 22%;
+                --marginY: 2vh;
+                @include typography-size($h1: '8rem', $a: '2.2rem', $h1x2: '2rem');
             }
         }
     }
