@@ -89,6 +89,10 @@ module.exports = {
           {
             from: 'src/assets/img',
             to: 'img'
+          },
+          {
+            from: 'src/assets/translations',
+            to: 'translations'
           }
         ]
       }),
