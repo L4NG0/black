@@ -30,7 +30,7 @@ h1 {
     z-index: 1;
     font-family: 'Higuen';
     font-size: var(--title-size);
-    line-height: calc(var(--head-height) - (var(--title-size) / 2));
+    line-height: calc(var(--head-height) - (var(--title-size) / 2.5));
     margin-top: var(--marginY);
     text-align: center;
     cursor: default;

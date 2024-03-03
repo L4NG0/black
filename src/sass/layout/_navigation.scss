@@ -33,8 +33,10 @@
         left: var(--marginX);
         right: var(--marginX);
         z-index: 10;
+        display: none;
 
         @include media(l) {
+            display: block;
             background-color: var(--color-black);
             position: fixed;
             top: 0;
@@ -47,7 +49,6 @@
 
     &__menu {
         position: relative;
-        display: none;
         z-index: 10;
         list-style: none;
 
@@ -90,12 +91,6 @@
             }
         }
 
-        @include media(xl) {
-            &:hover {
-                width: 85%;
-                transform: scale(1.1) translateX(1.5%);
-            }
-        }
 
         & a {
             @include text-stroke(0.5px, 2px);
@@ -149,4 +144,6 @@
             }
         }
     }
+
+
 }

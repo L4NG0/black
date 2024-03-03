@@ -1,22 +1,52 @@
 .footer {
-    position: relative;
-    height: var(--foot-height);
-    line-height: var(--foot-height);
-    background-color: #000;
-    text-align: right;
+    position: fixed;
+    display: none;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 5vh;
+    background-color: #444;
+    opacity: 0.6;
+    z-index: 20;
 
-    &__container {
-        position: absolute;
-        bottom: var(--marginY);
-        left: var(--marginX);
-        right: var(--marginX);
-        background-color: #222;
-        border-radius: 5px;
+    @include media(l) {
+        display: block;
+        width: var(--width-secondary);
     }
 
-    &__text {
-        text-decoration: none;
-        color: white;
-        padding-right: calc(var(--iconX) / 2);
+    & .blackout {
+        width: 50%;
+        display: inline-block;
+        color: var(--color-main);
+        text-align: end;
+        font-size: 1.7rem;
+
+        @include media(l) {
+            text-align: left;
+        }
+
+        & p {
+            transform: translateX(25%);
+            cursor: default;
+        }
+    }
+
+    & .language {
+        width: 45%;
+        display: inline-block;
+        text-align: end;
+
+        & button {
+            border: none;
+            background-color: transparent;
+            text-align: center;
+            color: white;
+            font-family: 'BD Sans';
+            font-weight: bold;
+            font-size: 1.4rem;
+            letter-spacing: -1px;
+            padding: 0 1vw;
+            cursor: pointer;
+        }
     }
 }

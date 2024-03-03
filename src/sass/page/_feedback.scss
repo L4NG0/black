@@ -10,7 +10,7 @@
         font-size: var(--fedback-titleSize);
 
         @include media(xl) {
-            line-height: calc(var(--marginY) + (var(--head-height) / 2 - (var(--fedback-titleSize) / 3)));
+            line-height: calc(var(--marginY) + (var(--head-height) / 2 - (var(--fedback-titleSize) / 2)));
         }
     }
 }
