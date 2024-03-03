@@ -12,6 +12,7 @@ function toggleVisibility() {
 
         if (iconXmark.classList.contains('visible')) {
             menu.style.display = "block";
+            navigationBox.style.display = "block";
 
             banner.classList.add('header__banner-border');
 
@@ -42,7 +43,7 @@ function toggleVisibility() {
             const animation = navigationBox.animate(animationKeyframes, animationOptions);
             animation.onfinish = () => {
                 menu.style.display = "none";
-                navigationBox.classList.remove('visible');
+                navigationBox.style.display = "none";
                 banner.classList.remove('header__banner-border');
             }
 
