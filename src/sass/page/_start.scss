@@ -39,16 +39,20 @@
         }
     }
 
-    &__logo__element {
-        border-radius: 50%;
-        border: 5px solid black;
-        opacity: 0.8;
-        display: none;
-        cursor: pointer;
+    &__logo {
+        align-self: center;
 
-        &.visible {
-            z-index: 0;
-            display: inline;
+        &__element {
+            border-radius: 50%;
+            border: 5px solid black;
+            opacity: 0.8;
+            display: none;
+            cursor: pointer;
+
+            &.visible {
+                z-index: 0;
+                display: inline;
+            }
         }
     }
 }

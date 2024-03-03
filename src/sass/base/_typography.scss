@@ -31,6 +31,7 @@ h1 {
     font-family: 'Higuen';
     font-size: var(--title-size);
     line-height: calc(var(--head-height) - (var(--title-size) / 2));
+    margin-top: var(--marginY);
     text-align: center;
     cursor: default;
 }
@@ -46,15 +47,12 @@ h4 {
 h2 {
     cursor: default;
     font-size: var(--subtitle-size);
-
-
 }
 
 h3 {
     cursor: default;
     font-family: 'BD Sans';
     font-size: var(--h3-size);
-
 }
 
 h4 {

@@ -11,7 +11,6 @@
         --color-slogan: #40ffb5;
         --colorLight-slogan: hsl(157, 85%, 60%);
         --main-ff: 'Cormorant Garamond';
-
         @include typography-size(3rem, 1.7rem, 1.4rem, 1.3rem, null, 2rem);
         --iconX: 7%;
 
@@ -24,8 +23,6 @@
             --foot-height: 7.5vh;
             --marginY: 2vh;
             --marginX: 4%;
-
-            //typography size:
             @include typography-size(null, 2rem, 1.8rem, 1.5rem, 1.2rem, 1.8rem);
             --iconX: 10.5%;
         }
@@ -43,7 +40,7 @@
 
         @include media(l) {
             :root {
-                --head-height: 18vh;
+                --head-height: 21vh;
                 --width-main: 71%;
                 --width-secondary: 25%;
                 --marginY: 1vh;
