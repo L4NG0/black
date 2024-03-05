@@ -5,35 +5,46 @@ export function loadPreferredLanguage() {
     }
 }
 
-export function loadLanguage(lang) {
-    localStorage.removeItem('preferredLanguage');
+let originalElements = new Map();
+
+function cloneAndStoreElements() {
     document.querySelectorAll('[data-translate]').forEach(el => {
-        if (!el.getAttribute('data-original')) {
-            el.setAttribute('data-original', el.textContent);
+        const clone = el.cloneNode(true);
+        originalElements.set(el.getAttribute('data-translate'), clone);
+    });
+}
+
+cloneAndStoreElements();
+
+export function loadLanguage(lang) {
+    if (lang === document.documentElement.lang) {
+        restoreDefaultLanguage();
+        localStorage.removeItem('preferredLanguage');
+    } else {
+        fetch(`translations/${lang}.json`)
+            .then(response => response.json())
+            .then(translations => {
+                applyTranslations(translations);
+                localStorage.setItem('preferredLanguage', lang);
+            })
+            .catch(error => console.error('Error loading the translation', error));
+    }
+}
+
+function applyTranslations(translations) {
+    document.querySelectorAll('[data-translate]').forEach(el => {
+        const key = el.getAttribute('data-translate');
+        if (translations[key]) {
+            el.textContent = translations[key];
         }
     });
-    function restoreOriginalLanguage() {
-        document.querySelectorAll('[data-translate]').forEach(el => {
-            const originalContent = el.getAttribute('data-original');
-            if (originalContent) {
-                el.textContent = originalContent;
-            }
-        });
-    }
-    if (lang === document.documentElement.lang) {
-        restoreOriginalLanguage(lang);
-        return;
-    }
-    fetch(`translations/${lang}.json`)
-        .then(response => response.json())
-        .then(translations => {
-            document.querySelectorAll('[data-translate]').forEach(el => {
-                const key = el.getAttribute('data-translate');
-                if (translations[key]) {
-                    el.textContent = translations[key];
-                }
-            });
-            localStorage.setItem('preferredLanguage', lang);
-        })
-        .catch(error => console.error('Error loading the translation', error));
+}
+
+function restoreDefaultLanguage() {
+    originalElements.forEach((clone, key) => {
+        const original = document.querySelector(`[data-translate="${key}"]`);
+        if (original && clone) {
+            original.parentNode.replaceChild(clone.cloneNode(true), original); // Użyj klonu klonu, aby zachować oryginał w mapie
+        }
+    });
 }
