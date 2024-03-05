@@ -31,8 +31,9 @@ h1 {
     font-family: 'Higuen';
     font-size: var(--title-size);
     line-height: calc(var(--head-height) - (var(--title-size) / 2.5));
-    margin-top: var(--marginY);
+    margin: var(--marginY) 10vw 0 10vw;
     text-align: center;
+    white-space: pre-line;
     cursor: default;
 }
 
@@ -42,17 +43,19 @@ h4 {
     font-family: var(--main-ff);
     font-weight: bold;
     text-align: center;
+    cursor: default;
 }
 
 h2 {
-    cursor: default;
     font-size: var(--subtitle-size);
+    white-space: pre-line;
 }
 
 h3 {
     cursor: default;
     font-family: 'BD Sans';
     font-size: var(--h3-size);
+    white-space: pre-line;
 }
 
 h4 {

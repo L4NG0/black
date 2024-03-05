@@ -29,7 +29,7 @@
     flex-wrap: wrap;
 
     @include media(s) {
-        width: 60%;
+        width: 50%;
         margin-top: 8vh;
         border-width: 15px;
     }
