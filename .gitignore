@@ -1,4 +1,4 @@
 node_modules/*
+dist/*
 package-lock.json
-src/index2.html
-backup/*
+black.code-workspace
